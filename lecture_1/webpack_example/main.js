@@ -1,5 +1,5 @@
 define(['./Robot'], (Robot) => {
-  var robot = new Robot;
-  console.log(robot.beep());
+  var robot = new Robot();
+  robot.beep();
 });
 

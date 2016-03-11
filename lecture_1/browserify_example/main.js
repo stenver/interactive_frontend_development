@@ -1,5 +1,6 @@
 "use strict";
 
 var Robot = require('./robot');
-(new Robot).beep();
+var robot = new Robot();
+robot.beep();
 
