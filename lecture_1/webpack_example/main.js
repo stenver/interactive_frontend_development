@@ -1,4 +1,8 @@
-define(['./Robot'], (Robot) => {
+define([
+  './Robot'
+], (
+    Robot
+) => {
   var robot = new Robot();
   robot.beep();
 });
