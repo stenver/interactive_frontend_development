@@ -48,7 +48,7 @@ define(["react", "react-dom"],
   });
 
   ReactDOM.render(
-    React.createElement(CommentBox, null),
+    <CommentBox/>,
     document.getElementById('content')
   );
 });
