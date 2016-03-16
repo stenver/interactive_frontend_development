@@ -1,4 +1,4 @@
-# Webpack-dev-server example
+# Components example
 
 To use:
 ```
