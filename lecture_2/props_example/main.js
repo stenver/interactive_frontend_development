@@ -26,10 +26,13 @@ define(["react", "react-dom"],
   });
 
   var CommentForm = React.createClass({
+    getDefaultProps: function() {
+      return {commentFormText: "Some random text"};
+    },
     render: function() {
       return (
         <div className="commentForm">
-          Hello, world! I am a CommentForm.
+          {this.props.commentFormText}
         </div>
       );
     }
