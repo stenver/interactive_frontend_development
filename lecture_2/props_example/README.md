@@ -1,4 +1,4 @@
-# Webpack-dev-server example
+# Props example
 
 To use:
 ```

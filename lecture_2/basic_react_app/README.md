@@ -1,4 +1,4 @@
-# Webpack-dev-server example
+# Basic react example
 
 To use:
 ```
