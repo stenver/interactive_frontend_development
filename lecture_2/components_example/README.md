@@ -10,4 +10,4 @@ Open http://localhost:3000 in your browser
 
 ## Explanation
 
-React renders component CommentBox. CommentBox in turn contains sub components.
+React renders component CommentBox. CommentBox composes of sub components.
