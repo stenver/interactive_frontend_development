@@ -13,3 +13,5 @@ Open http://localhost:3000 in your browser
 We created a Comment component which has props. The values to the props are handed by comment list. The props are immutable in Comment component and cannot be changed.
 
 The props.children in the end of Comment renders whatever child nodes were passed down from the parent. In this case the comment text.
+
+The CommentForm has #getDefaultProps which specifies the default props value for this component. This can be overwritten by a parent component.
