@@ -16,10 +16,16 @@ define(["react", "react-dom"],
 
   var CommentList = React.createClass({
     render: function() {
+      var commentNodes = this.props.data.map(function(comment) {
+        return (
+          <Comment author={comment.author} key={comment.id}>
+            {comment.text}
+          </Comment>
+        );
+      });
       return (
         <div className="commentList">
-          <Comment author="Pete Hunt">This is one comment</Comment>
-          <Comment author="Jordan Walke">This is *another* comment</Comment>
+          {commentNodes}
         </div>
       );
     }
@@ -36,11 +42,28 @@ define(["react", "react-dom"],
   });
 
   var CommentBox = React.createClass({
+    loadCommentsFromServer: function() {
+      // Lets mock the data, in reality would fetch it from server. In this case
+      // we will simply add same comment to the old data every time a pull is made from "server"
+      old_data = this.state.data
+      old_data.push({"author": "Sukram", "text": "This is niss thing"})
+      this.setState({data: old_data});
+    },
+
+    getInitialState: function() {
+      return {data: []};
+    },
+
+    componentDidMount: function() {
+      this.loadCommentsFromServer();
+      setInterval(this.loadCommentsFromServer, 2000);
+    },
+
     render: function() {
       return (
         <div className="commentBox">
           <h1>Comments</h1>
-          <CommentList />
+          <CommentList data={this.state.data}/>
           <CommentForm />
         </div>
       );
@@ -52,3 +75,4 @@ define(["react", "react-dom"],
     document.getElementById('content')
   );
 });
+
