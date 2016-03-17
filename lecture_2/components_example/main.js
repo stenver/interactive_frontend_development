@@ -21,6 +21,20 @@ define(["react", "react-dom"],
     }
   });
 
+  // This component is invalid - Adjacent JSX elements must be wrapped in an enclosing tag
+  // var InvalidComponent = React.createClass({
+  //   render: function() {
+  //     return (
+  //       <div className="commentForm">
+  //         Hello, world! I am a CommentForm.
+  //       </div>
+  //       <div className="commentForm">
+  //         Hello, world! I am a CommentForm.
+  //       </div>
+  //     );
+  //   }
+  // });
+
   var CommentBox = React.createClass({
     render: function() {
       return (
