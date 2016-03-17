@@ -44,14 +44,14 @@ define(["react", "react-dom"],
         <div>
           <input
             type="text"
-            placeholder="Your name"
-            value={this.state.author}
-            onChange={this.handleAuthorChange}
+            placeholder="Say something..."
+            value="Some static value"
           />
           <input
             type="text"
-            placeholder="Say something..."
-            value="Some static value"
+            placeholder="Your name"
+            value={this.state.author}
+            onChange={this.handleAuthorChange}
           />
         </div>
       );

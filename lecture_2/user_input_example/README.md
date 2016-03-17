@@ -1,4 +1,4 @@
-# Webpack-dev-server example
+# User input example
 
 To use:
 ```
@@ -10,10 +10,5 @@ Open http://localhost:3000 in your browser
 
 ## Explanation
 
-In this example we handle user input and bring in two-way data binding.
+Look at CommentForm. There are 2 input fields. First one has static value which cannot be changed by user. Console also prints a warning to explicitly set it to read-only. Other has dynamic value which can be changed by the user. The value change function is handed on onChange attribute
 
-The commentForm now has 2 text input tags in it where it can capture user input. We explicitly specify its starting value and what happens if the value changes.
-
-The submit input works as usual and we define handle submit on the form #onSubmit.
-
-When a text input value is changed, we save the new state. When submission is done, we call the #onCommentSubmit prop which propagates up to the parent which gave us this method. This is where two-way data binding comes into play.
