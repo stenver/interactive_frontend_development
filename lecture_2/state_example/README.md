@@ -1,4 +1,4 @@
-# State exaple
+# State example
 
 To use:
 ```
