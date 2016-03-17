@@ -1,4 +1,4 @@
-# Webpack-dev-server example
+# State exaple
 
 To use:
 ```
