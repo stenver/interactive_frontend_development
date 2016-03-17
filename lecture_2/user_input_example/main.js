@@ -62,9 +62,9 @@ define(["react", "react-dom"],
     loadCommentsFromServer: function() {
       // Lets mock the data, in reality would fetch it from server. In this case
       // we will simply add same comment to the old data every time a pull is made from "server"
-      old_data = this.state.data
-      old_data.push({"author": "Sukram", "text": "This is niss thing"})
-      this.setState({data: old_data});
+      oldData = this.state.data
+      oldData.push({"author": "Sukram", "text": "This is niss thing"})
+      this.setState({data: oldData});
     },
 
     getInitialState: function() {
@@ -78,9 +78,9 @@ define(["react", "react-dom"],
 
     handleCommentSubmit: function(comment) {
       // Mock out server submitting and simply push the comment to existing data
-      old_data = this.state.data
-      old_data.push(comment)
-      this.setState({data: old_data});
+      oldData = this.state.data
+      oldData.push(comment)
+      this.setState({data: oldData});
     },
 
     render: function() {
