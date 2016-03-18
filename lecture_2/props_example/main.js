@@ -2,7 +2,7 @@ define(["react", "react-dom"],
   (React, ReactDOM) => {
 
   var Comment = React.createClass({
-    render: function() {
+    render() {
       return (
         <div className="comment">
           <h2 className="commentAuthor">
@@ -15,7 +15,7 @@ define(["react", "react-dom"],
   });
 
   var CommentList = React.createClass({
-    render: function() {
+    render() {
       return (
         <div className="commentList">
           <Comment author="Pete Hunt">This is one comment</Comment>
@@ -26,10 +26,10 @@ define(["react", "react-dom"],
   });
 
   var CommentForm = React.createClass({
-    getDefaultProps: function() {
+    getDefaultProps() {
       return {commentFormText: "Some random text"};
     },
-    render: function() {
+    render(){
       return (
         <div className="commentForm">
           {this.props.commentFormText}
@@ -39,7 +39,7 @@ define(["react", "react-dom"],
   });
 
   var CommentBox = React.createClass({
-    render: function() {
+    render() {
       return (
         <div className="commentBox">
           <h1>Comments</h1>
