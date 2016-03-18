@@ -17,6 +17,8 @@ react-dom
 babel-loader
 babel-core
 babel-preset-es2015
+babel-preset-react
 ```
+The webpack configuration has assed `react` preset for the transpiler.
 
-Once the DOM has loaded, our react script is loaded and react renders itself on the Div with id "content"
+Once the DOM has loaded, our react script is loaded and react renders itself on the Div with id "content".
