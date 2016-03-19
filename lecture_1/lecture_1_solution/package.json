@@ -1,0 +1,22 @@
+{
+  "name": "speed-typing",
+  "version": "0.0.0",
+  "description": "A competitive speed typer.",
+  "main": "server.js",
+  "dependencies": {
+    "babel-cli": "^6.4.5",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.2.0",
+    "body-parser": "^1.4.3",
+    "browserify": "^13.0.0"
+  },
+  "devDependencies": {
+    "beefy": "^2.1.6",
+    "watchify": "^3.7.0"
+  },
+  "scripts": {
+    "start": "node_modules/beefy/bin/beefy js/main.js:dist/bundle.js 3000  --index=index.html -- -t [ babelify --presets [ es2015 ] ]"
+  },
+  "author": "stenver"
+}
