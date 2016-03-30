@@ -1,0 +1,20 @@
+{
+  "name": "javascript",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-preset-es2015": "^6.5.0",
+    "babelify": "^7.2.0",
+    "beefy": "^2.1.6",
+    "browserify": "^13.0.0",
+    "watchify": "^3.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "beefy main.js:bundle.js 3000 --live"
+  },
+  "author": "",
+  "license": "MIT"
+}
