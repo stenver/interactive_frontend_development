@@ -42,5 +42,8 @@ define(["react", "react-dom"],
       );
     }
   });
+  CommentForm.propTypes = {
+    onCommentSubmit: React.PropTypes.func.isRequired,
+  };
   return CommentForm;
 });
