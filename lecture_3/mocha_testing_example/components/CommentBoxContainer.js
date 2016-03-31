@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import CommentBox from "./CommentBox";
 
-export var CommentBoxContainer = React.createClass({
+var CommentBoxContainer = React.createClass({
   addComment: function(comment) {
     const previousComments = this.state.comments;
     const newComments = previousComments.concat(comment);
@@ -39,3 +39,5 @@ export var CommentBoxContainer = React.createClass({
     );
   }
 });
+
+export { CommentBoxContainer as default };
