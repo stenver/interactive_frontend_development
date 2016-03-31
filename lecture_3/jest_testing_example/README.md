@@ -34,6 +34,10 @@ Package json has following deps:
 jest-cli
 bugger
 ```
+
+*jest-cli* is a testing framework, automocking all the dependencies by default and built on top of *jasmine*.
+*bugger* is an experimental browser runner, which allows you to debug your tests in the browser.
+
 Tests are all in __tests__ folder.
 
 Jest mocks out everything by default, so you need to explicitly unmock dependencies.
