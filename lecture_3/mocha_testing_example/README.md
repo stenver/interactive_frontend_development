@@ -48,14 +48,15 @@ expect(myFunc).to.have.been.calledWith(sinon.match.number, {my: 'object'});
 ```
 
 
-*mocha* and *babel* integration is defined in test/mocha.opts.  
+*mocha* and *babel* integration is defined in *test/mocha.opts*.  
 That file also defines *mocha* transpilation and how *mocha* 
 searches for tests and displays test results.  
+The file defines that *test/test_helper.js* should be required for every test.  
+
 *test/mocha.opts* file is used by *mocha* automatically.
 
 Check out test/test_helper.js for how *jsdom* can be used to mock out the DOM.  
 *chai* and *sinon-chai* are also set up in the same file.  
-The *test/test_helper.js* file is required by *mocha* automatically.
 
 
 We are using `react-addons-test-utils` for testing react components.
