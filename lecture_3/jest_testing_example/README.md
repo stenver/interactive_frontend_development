@@ -52,3 +52,5 @@ We are using `react-addons-test-utils` for testing react components.
 Comment-test, CommentBoxContainer-test and CommentForm-test are testing on the DOM.
 
 CommentBox-test and CommentList-test are testing on shallow DOM.
+
+Check out CommentBoxContainer-test. It runs a test on real DOM, but the CommentBoxContainer is using a pure function CommentBox in its render. React test utils dont have a very good support for pure functions yet, so we need to mock out the return value of the CommentBox, otherwise we will get a render error.
