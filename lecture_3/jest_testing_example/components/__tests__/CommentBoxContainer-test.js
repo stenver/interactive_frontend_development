@@ -17,7 +17,6 @@ describe('CommentBoxContainer', () => {
 
   it('creates the input nodes', () => {
     let commentBoxContainer = buildCommentBoxContainer();
-	debugger
     var commentBox = TestUtils.findRenderedDOMComponentWithTag(commentBoxContainer, CommentBox);
 	commentBoxContainer.state.data = "Some data"
 	debugger
