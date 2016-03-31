@@ -32,7 +32,7 @@ define(["react", "react-dom", "./CommentBox.js"],
     render: function() {
       return (
         <CommentBox
-          data={this.state.comments}
+          comments={this.state.comments}
           onCommentSubmit={this.handleCommentSubmit}
         />
       );

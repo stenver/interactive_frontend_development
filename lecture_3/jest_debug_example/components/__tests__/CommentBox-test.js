@@ -10,10 +10,10 @@ import CommentList from '../CommentList';
 import CommentForm from '../CommentForm';
 
 describe('CommentBox', () => {
-  var buildCommentBox = ((data, onCommentSubmit) => {
+  var buildCommentBox = ((comments, onCommentSubmit) => {
     let renderer = TestUtils.createRenderer();
     renderer.render(
-      <CommentBox data={data} onCommentSubmit={onCommentSubmit} />
+      <CommentBox comments={comments} onCommentSubmit={onCommentSubmit} />
     );
     let renderedTree = renderer.getRenderOutput();
 
@@ -29,12 +29,12 @@ describe('CommentBox', () => {
   });
 
   it('creates CommentList', () => {
-    let data = [{"id": 1}];
-    let commentBox = buildCommentBox(data, ()=>{});
+    let comments = [{"id": 1}];
+    let commentBox = buildCommentBox(comments, ()=>{});
     let commentHeading = commentBox.props.children[1];
 
     expect(commentHeading.type).toBe(CommentList);
-    expect(commentHeading.props).toEqual({"data": data});
+    expect(commentHeading.props).toEqual({"comments": comments});
   });
 
   it('creates CommentForm', () => {
