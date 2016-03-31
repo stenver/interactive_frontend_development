@@ -32,11 +32,16 @@ The test will automatically run until breakpoint. You can now debug in the conso
 Package json has following deps:
 ```
 jest-cli
+babel-jest
+babel-polyfill
 bugger
 ```
 
 *jest-cli* is a testing framework, automocking all the dependencies by default and built on top of *jasmine*.
 *bugger* is an experimental browser runner, which allows you to debug your tests in the browser.
+*babel-jest* and *babel-polyfill* lets us use JSX in our tests
+
+We also created a .babelrc file for the Jest, so it can figure out how to do the transpiling.
 
 Tests are all in __tests__ folder.
 
