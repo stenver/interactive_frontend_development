@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { CommentBox } from "./CommentBox";
+import CommentBox from "./CommentBox";
 
 export var CommentBoxContainer = React.createClass({
   addComment: function(comment) {
