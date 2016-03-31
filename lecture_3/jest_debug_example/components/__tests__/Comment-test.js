@@ -10,10 +10,10 @@ import Comment from '../Comment';
 describe('Comment', () => {
   var Wrapper = React.createClass({
     render: function() {
-        return (
-            <div>{this.props.children}</div>
-        );
-      }
+      return (
+          <div>{this.props.children}</div>
+      );
+    }
   });
 
   var buildComment = ((author, text) => {
