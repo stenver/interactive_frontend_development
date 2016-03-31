@@ -32,12 +32,8 @@ The test will automatically run until breakpoint. You can now debug in the conso
 Package json has following deps:
 ```
 jest-cli
-babel-jest
-babel-polyfill
 bugger
 ```
-We also created a .babelrc file for the Jest, so it can figure out how to do the transpiling.
-
 Tests are all in __tests__ folder.
 
 Jest mocks out everything by default, so you need to explicitly unmock dependencies.
