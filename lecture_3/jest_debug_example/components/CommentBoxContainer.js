@@ -3,18 +3,20 @@ import ReactDOM from "react-dom";
 import { CommentBox } from "./CommentBox";
 
 export var CommentBoxContainer = React.createClass({
+  addComment: function(comment) {
+    const previousComments = this.state.comments;
+    const newComments = previousComments.concat(comment);
+    this.setState({comments: newComments});
+  },
   loadCommentsFromServer: function() {
-    // Lets mock the data, in reality would fetch it from server. In this case
-    // we will simply add same comment to the old data every time a pull is made from "server"
-    // !!Note that this is not functional approach, as we mutate existing data, instead of
-    // returning a new object!!
-    var oldData = this.state.data
-    oldData.push({"author": "Sukram", "text": "This is niss thing", "id": Date.now()})
-    this.setState({data: oldData});
+    // Lets mock the comments, in reality would fetch it from server. In this case
+    // we will simply add same comment to the old comments every time a pull is made from "server"
+    const newComment = {"author": "Sukram", "text": "This is niss thing", "id": Date.now()};
+    this.addComment(newComment);
   },
 
   getInitialState: function() {
-    return {data: []};
+    return {comments: []};
   },
 
   componentDidMount: function() {
@@ -22,19 +24,16 @@ export var CommentBoxContainer = React.createClass({
   },
 
   handleCommentSubmit: function(comment) {
-    // Mock out server submitting and simply push the comment to existing data
-    var oldData = this.state.data
     // You shouldnt mutate data, but we just mock out server response in here,
     // which has assigned ID to the comment
     comment.id = Date.now()
-    oldData.push(comment)
-    this.setState({data: oldData});
+    this.addComment(comment)
   },
 
   render: function() {
     return (
       <CommentBox
-        data={this.state.data}
+        data={this.state.comments}
         onCommentSubmit={this.handleCommentSubmit}
       />
     );
