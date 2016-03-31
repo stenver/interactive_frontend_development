@@ -9,10 +9,10 @@ import CommentList from '../CommentList';
 import Comment from '../Comment';
 
 describe('CommentList', () => {
-  var buildCommentList = ((data) => {
+  var buildCommentList = ((comments) => {
     let renderer = TestUtils.createRenderer();
     renderer.render(
-      <CommentList data={data}/>
+      <CommentList comments={comments}/>
     );
     let renderedTree = renderer.getRenderOutput();
 
@@ -20,11 +20,11 @@ describe('CommentList', () => {
   });
 
   it('creates the correct comments', () => {
-    let data = [
+    let comments = [
       {id: 1, "author": "a", "text": "a-text"},
       {id: 2, "author": "b", "text": "b-text"}
     ]
-    let commentList = buildCommentList(data, ()=>{});
+    let commentList = buildCommentList(comments, ()=>{});
     expect(commentList.props.children.length).toEqual(2)
 
     let first_comment = commentList.props.children[0];

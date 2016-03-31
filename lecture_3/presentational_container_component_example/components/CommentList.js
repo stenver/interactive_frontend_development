@@ -2,7 +2,7 @@ define(["react", "react-dom", "./Comment.js"],
   (React, ReactDOM, Comment) => {
 
   const CommentList = (props) => {
-    var comments = props.data.map((comment) => {
+    var comments = props.comments.map((comment) => {
       return <Comment author={comment.author} key={comment.id}>{comment.text}</Comment>;
     })
     return (
@@ -12,7 +12,7 @@ define(["react", "react-dom", "./Comment.js"],
     );
   };
   CommentList.propTypes = {
-    data: React.PropTypes.array.isRequired,
+    comments: React.PropTypes.array.isRequired,
   };
   return CommentList;
 });
