@@ -6,47 +6,44 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import CommentBox from '../CommentBox';
+import CommentList from '../CommentList';
+import CommentForm from '../CommentForm';
 
 describe('CommentBox', () => {
-  var Wrapper = React.createClass({
-    render: function() {
-      return (
-          <div>{this.props.children}</div>
-      );
-    }
-  });
-
   var buildCommentBox = ((data, onCommentSubmit) => {
-    debugger
-    let dom = TestUtils.renderIntoDocument(
-      <Wrapper>
-        <CommentBox data={data} onCommentSubmit={onCommentSubmit} />
-      </Wrapper>
+    let renderer = TestUtils.createRenderer();
+    renderer.render(
+      <CommentBox data={data} onCommentSubmit={onCommentSubmit} />
     );
+    let renderedTree = renderer.getRenderOutput();
 
-    return TestUtils.findRenderedDOMComponentWithClass(dom, "commentBox")
+    return renderedTree;
   });
 
   it('creates Comments heading', () => {
     let commentBox = buildCommentBox([{"id": 1, "author": "wat", "text": "wut"}], ()=>{});
-    let commentHeading = commentBox.childNodes[0];
-    expect(commentHeading.tagName).toEqual('H1');
-    expect(commentHeading.textContent).toEqual('Comments');
+    let commentHeading = commentBox.props.children[0];
+
+    expect(commentHeading.type).toBe('h1');
+    expect(commentHeading.props.children).toEqual('Comments');
   });
 
   it('creates CommentList', () => {
-    let commentBox = buildCommentBox([{"id": 1}], ()=>{});
-    let commentList = commentBox.childNodes[1];
-    debugger
-    expect(commentList.tagName).toEqual('H1');
-    expect(commentList.textContent).toEqual('Comments');
+    let data = [{"id": 1}];
+    let commentBox = buildCommentBox(data, ()=>{});
+    let commentHeading = commentBox.props.children[1];
+
+    expect(commentHeading.type).toBe(CommentList);
+    expect(commentHeading.props).toEqual({"data": data});
   });
 
   it('creates CommentForm', () => {
-    let commentBox = buildCommentBox([{"id": 1}], ()=>{});
-    let commenForm = commentBox.childNodes[2];
-    expect(commenForm.tagName).toEqual('H1');
-    expect(commenForm.textContent).toEqual('Comments');
+    let onCommentSubmit = () => {};
+    let commentBox = buildCommentBox([{"id": 1}], onCommentSubmit);
+    let commentHeading = commentBox.props.children[2];
+
+    expect(commentHeading.type).toBe(CommentForm);
+    expect(commentHeading.props).toEqual({"onCommentSubmit": onCommentSubmit});
   });
 });
 

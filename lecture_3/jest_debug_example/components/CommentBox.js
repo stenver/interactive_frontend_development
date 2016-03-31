@@ -4,7 +4,6 @@ import CommentList from "./CommentList";
 import CommentForm from "./CommentForm";
 
 const CommentBox = (props) => {
-  debugger
   return (
     <div className="commentBox">
       <h1>Comments</h1>
