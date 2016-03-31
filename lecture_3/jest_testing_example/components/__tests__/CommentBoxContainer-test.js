@@ -18,7 +18,7 @@ describe('CommentBoxContainer', () => {
     );
   });
 
-  it('sets the inital state', () => {
+  it('loads the inital comments from the server', () => {
     let commentBoxContainer = buildCommentBoxContainer();
 
     let comments = commentBoxContainer.state.comments;
