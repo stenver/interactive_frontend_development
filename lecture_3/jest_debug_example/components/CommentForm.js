@@ -12,12 +12,15 @@ var CommentForm = React.createClass({
     this.setState({text: e.target.value});
   },
   handleSubmit: function(e) {
+    debugger
     e.preventDefault();
     var author = this.state.author.trim();
     var text = this.state.text.trim();
+    debugger
     if (!text || !author) {
       return;
     }
+    debugger
     this.props.onCommentSubmit({author: author, text: text});
     this.setState({author: '', text: ''});
   },
