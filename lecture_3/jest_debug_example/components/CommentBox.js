@@ -7,13 +7,13 @@ const CommentBox = (props) => {
   return (
     <div className="commentBox">
       <h1>Comments</h1>
-      <CommentList data={props.data}/>
+      <CommentList comments={props.comments}/>
       <CommentForm onCommentSubmit={props.onCommentSubmit} />
     </div>
   );
 };
 CommentBox.propTypes = {
-  data: React.PropTypes.array.isRequired,
+  comments: React.PropTypes.array.isRequired,
   onCommentSubmit: React.PropTypes.func.isRequired,
 };
 export { CommentBox as default };

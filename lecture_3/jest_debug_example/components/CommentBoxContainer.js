@@ -33,7 +33,7 @@ export var CommentBoxContainer = React.createClass({
   render: function() {
     return (
       <CommentBox
-        data={this.state.comments}
+        comments={this.state.comments}
         onCommentSubmit={this.handleCommentSubmit}
       />
     );
