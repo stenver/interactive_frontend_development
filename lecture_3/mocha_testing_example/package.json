@@ -23,6 +23,7 @@
   },
   "scripts": {
     "test": "mocha",
+    "test-debug": "mocha --debug-brk",
     "start": "webpack-dev-server"
   },
   "author": "",

@@ -7,6 +7,21 @@ npm install
 npm test
 ```
 
+## Debugging
+Install and run [node-inspector](https://github.com/node-inspector/node-inspector)
+```
+npm install -g node-inspector
+node-inspector
+```
+Put a `debugger` keyword to the test you want to debug
+
+In another terminal window, run
+```
+npm run test-debug
+```
+Open chrome browser on url [http://127.0.0.1:8080/?port=5858](http://127.0.0.1:8080/?port=5858)
+Continue onward from the first breakpoint and wait for ~30 seconds for the mocha to load everything.
+
 ## Explanation
 
 All the test are in the test/ folder.
