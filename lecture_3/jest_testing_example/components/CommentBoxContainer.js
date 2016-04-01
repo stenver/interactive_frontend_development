@@ -32,12 +32,10 @@ var CommentBoxContainer = React.createClass({
 
   render: function() {
     return (
-      <div>
-        <CommentBox
-          comments={this.state.comments}
-          onCommentSubmit={this.handleCommentSubmit}
-        />
-      </div>
+      <CommentBox
+        comments={this.state.comments}
+        onCommentSubmit={this.handleCommentSubmit}
+      />
     );
   }
 });
