@@ -1,0 +1,151 @@
+body {
+  background: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+  padding: 30px;
+}
+
+a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
+  font-size: 12px;
+  margin: 0 2px;
+  padding: 0 5px;
+}
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+  margin: 0 0 15px;
+  padding: 0;
+}
+
+h1 {
+  border-bottom: 1px solid #ddd;
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 0 0 15px;
+  padding: 0;
+}
+
+h2 {
+  border-bottom: 1px solid #eee;
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+p, ul {
+  margin: 15px 0;
+}
+
+ul {
+  padding-left: 30px;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.wordsbox {
+  clear: both;
+  text-align: center;
+  font-size: 120%;
+  box-sizing: border-box;
+  max-width: 100% !important;
+  border: 1px solid #000;
+  border-radius: 1ex;
+  background: #eee;
+}
+
+.wordsbox .words-outer {
+  padding: 1ex;
+  background: #fff;
+  border-bottom: 1px solid #000;
+}
+
+.wordsbox .words-outer .words {
+  box-sizing: border-box;
+  display: inline-block;
+  background: #fff;
+  height: 9ex;
+  overflow: hidden;
+  line-height: 3ex;
+  font-family: "Fira Mono","DejaVu Sans Mono","Bitstream Vera Mono","Consolas","Lucida Console",monospace;
+  font-size: 160%;
+  text-align: center;
+  border: 0;
+  background: transparent;
+}
+
+.wordsbox .words-outer .words .word {
+  display: inline-block;
+  padding: 0 .25em;
+  position: relative;
+  margin-right: .1em;
+}
+
+.wordsbox .words-outer .words .correct {
+  background: green;
+}
+
+.wordsbox .words-outer .words .incorrect {
+  background: red;
+}
+
+.wordsbox .words-outer .words .current_word {
+  background: #b8e069;
+  border-radius: 5px;
+}
+
+.wordsbox .words-outer .words .letter {
+  display: inline-block;
+  background: #b8e069;
+  border-radius: 5px;
+}
+
+.wordsbox .words-outer .words .letter-correct {
+  background: white;
+}
+
+.wordsbox .words-outer .words .letter-incorrect {
+  background: red;
+}
+
+.wordsbox .typing-container{
+  display: block;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 160%;
+  text-align: center;
+  border: 0;
+  background: transparent;
+  font-family: "Open Sans","DejaVu Sans","Bitstream Vera Sans","Arial",sans-serif;
+}
+
+.StatDiv {
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+}
