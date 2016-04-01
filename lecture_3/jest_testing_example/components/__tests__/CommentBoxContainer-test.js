@@ -10,7 +10,7 @@ import CommentBox from '../CommentBox';
 
 // Pure functions need to be mocked to return some DOM
 // We give it a classname to test that it is rendered
-CommentBox.mockImplementation((props) => <div className="commentBox"></div>)
+CommentBox.mockImplementation((props) => <div></div>)
 
 describe('CommentBoxContainer', () => {
   var buildCommentBoxContainer = (() => {
