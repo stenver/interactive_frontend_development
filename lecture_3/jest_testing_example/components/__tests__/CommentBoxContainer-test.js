@@ -29,10 +29,13 @@ describe('CommentBoxContainer', () => {
   });
 
   it('renders commentBox component', () => {
-    let commentBoxContainer = buildCommentBoxContainer();
-    let commentBox = TestUtils.findRenderedDOMComponentWithClass(commentBoxContainer, "commentBox")
+    let renderer = TestUtils.createRenderer();
+    renderer.render(<CommentBoxContainer/>)
+    let output = renderer.getRenderOutput();
 
-    expect(commentBox).toBeDefined();
+    expect(output.type).toBe(CommentBox);
+    expect(output.props.comments).toEqual([])
+    expect(output.props.onCommentSubmit).toBeDefined()
   });
 
   describe('when new comment is submitted', () => {
