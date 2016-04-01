@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import CommentBoxContainer from '../components/CommentBoxContainer';
+import CommentBox from '../components/CommentBox';
 
 describe('CommentBoxContainer', () => {
   var buildCommentBoxContainer = (() => {
@@ -21,13 +22,6 @@ describe('CommentBoxContainer', () => {
     expect(comments[0]).to.have.property('text', 'This is niss thing');
   });
 
-  it('renders commentBox component', () => {
-    let commentBoxContainer = buildCommentBoxContainer();
-    let commentBox = TestUtils.findRenderedDOMComponentWithClass(commentBoxContainer, "commentBox")
-
-    expect(commentBox).to.exist;
-  });
-
   context('when new comment is submitted', () => {
     it('adds new comment to state', () => {
       let commentBoxContainer = buildCommentBoxContainer();
@@ -39,6 +33,18 @@ describe('CommentBoxContainer', () => {
       expect(comments[1]).to.have.property('author', 'Sukram');
       expect(comments[1]).to.have.property('text', 'Some text');
     });
+  });
+
+  it('renders CommentBox with comments and onCommentSubmit handler', () => {
+    let renderer = TestUtils.createRenderer();
+    renderer.render(<CommentBoxContainer/>)
+    let output = renderer.getRenderOutput();
+
+    expect(output.type).to.eq(CommentBox);
+    expect(output.props).to.have.property('comments')
+      .which.eql([])
+    expect(output.props).to.have.property('onCommentSubmit')
+      .which.is.a('function')
   });
 });
 
