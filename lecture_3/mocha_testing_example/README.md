@@ -22,6 +22,18 @@ npm run test-debug
 Open chrome browser on url [http://127.0.0.1:8080/?port=5858](http://127.0.0.1:8080/?port=5858)
 Continue onward from the first breakpoint and wait for ~30 seconds for the mocha to load everything.
 
+## Debugging with bugger
+
+You can also debug with [bugger](https://github.com/buggerjs/bugger). This is a lot faster than the node-inspector
+
+Put a `debugger` keyword to the test that you wish to debug.
+
+Now run the command `npm run test-debug-bugger`. This will give you a chrome URL, similar to this:
+```
+chrome-devtools://devtools/bundled/inspector.html?ws=127.0.0.1:8058/devtools/page/F80943B0-F771-11E5-B589-6522C32A017C
+```
+Open this URL in the browser and the bugger will break at the beginning of script. Press continue and then it will break at your breakpoint.
+
 ## Explanation
 
 All the test are in the test/ folder.
