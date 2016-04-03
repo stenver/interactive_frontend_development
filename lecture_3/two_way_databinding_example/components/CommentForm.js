@@ -19,7 +19,7 @@ define(["react", "react-dom"],
         return;
       }
       this.props.onCommentSubmit({author: author, text: text});
-      this.setState({author: '', text: ''});
+      this.getInitialState();
     },
 
     render: function() {
