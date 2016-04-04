@@ -4,3 +4,4 @@ Lecture 3 introduces Presentational-Container pattern, 2-way data flow and testi
 
 After Lecture 3 you should be able to build React applications which can contain functionality.
 
+The examples continue from where lecture 2 left off
