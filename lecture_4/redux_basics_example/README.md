@@ -1,17 +1,18 @@
-# Webpack example
+# Basic redux example
 
 To use:
 ```
 npm install
-webpack
-open index.html // On Mac, this is valid command in terminal
+npm start
+open http://localhost:3000
 ```
 
-Open the console in your browser, you should see "boop"
-
 ## Explanation
-npm install installs all the package dependencies
+The reducers contains an index.js. This file contains our application Update part.
+We currently support 2 actions - `Increment` and `Decrement`.
 
-Webpack bundles the file tree extracted from main.js into a single file - bundle.js. It has a babel-loader loader, which transpiles the es2015 code into standard javascript
+The application store is created in main.js. This store contains the entire application state. A single source of truth. You can ask the state from the store, or you can dispatch actions on the store. In this case, the React component gets the state and both of the actions handed to it as props.
 
-Opening index.html shows the results. The index.html requires the generated bundle.js
+The component Counter.js is a pure function that takes the value and both actions. It puts the value to the DOM and creates 2 buttons which can call the actions `Increment` and `Decrement`.
+
+Note that the actions are the only way to update the state of the application.
