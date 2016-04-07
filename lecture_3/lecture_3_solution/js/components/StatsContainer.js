@@ -29,7 +29,6 @@ var StatsContainer = React.createClass({
 
   calculateWordsPerMinute: function() {
     let now = Math.floor(Date.now() / 1000)
-    debugger
     let minutesPassed = (now - this.props.startTime) / 60;
     return (this.props.pastInput.length / minutesPassed).toFixed(2);
   },
