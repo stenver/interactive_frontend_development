@@ -20,8 +20,6 @@ describe('TypingContainer', () => {
 	let textInput = TestUtils.findRenderedDOMComponentWithTag(typingContainer, 'input');
 	TestUtils.Simulate.change(textInput);
 
-	console.log(onUserInput.mock);
-	console.log(onUserInput.mock.calls);
 	expect(onUserInput.mock.calls[0][0]).toEqual("hello");
   });
 });
