@@ -21,28 +21,6 @@ describe('WordsContainer', () => {
     );
   });
 
-  // it('calculates accuaracy', () => {
-  //   var startTime=Math.floor(Date.now() / 1000);
-
-  //   let WordsContainer = buildWordsContainer(["a", "c"], ["a", "b"], startTime);
-  //   expect(WordsContainer.calculateAccuaracy()).toEqual("50");
-
-  //   WordsContainer = buildWordsContainer(["a", "b"], ["a", "b"], startTime);
-  //   expect(WordsContainer.calculateAccuaracy()).toEqual("100");
-  // });
-
-  // it('calculates words per minute', () => {
-  //   let minute = 1000 * 60;
-  //   let startTime = Math.floor((Date.now() - minute) / 1000);
-
-  //   debugger
-  //   let WordsContainer = buildWordsContainer([], ["a", "b"], startTime);
-  //   expect(WordsContainer.calculateWordsPerMinute()).toEqual("2.00");
-
-  //   WordsContainer = buildWordsContainer([], ["a", "b", "c", "d"], startTime);
-  //   expect(WordsContainer.calculateWordsPerMinute()).toEqual("4.00");
-  // });
-
   it('renders words and letters without color if no input', () => {
     let words = ["a", "b"]
     let pastInput = []
