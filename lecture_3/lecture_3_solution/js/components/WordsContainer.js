@@ -27,7 +27,7 @@ var WordsContainer = React.createClass({
     let childNodes = [];
     this.props.words.forEach((word, index) => {
       let letters = word;
-      let color = "none"
+      let color = "none";
       if (index === this.props.pastInput.length) {
         letters = this.buildLetters(word);
       } else if (index < this.props.pastInput.length) {
