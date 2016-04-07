@@ -31,7 +31,6 @@ describe('StatsContainer', () => {
     let minute = 1000 * 60;
     let startTime = Math.floor((Date.now() - minute) / 1000);
 
-    debugger
     let statsContainer = buildStatsContainer([], ["a", "b"], startTime);
     expect(statsContainer.calculateWordsPerMinute()).toEqual("2.00");
 

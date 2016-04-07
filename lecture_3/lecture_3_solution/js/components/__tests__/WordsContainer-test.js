@@ -15,11 +15,6 @@ Word.mockImplementation(() => <div />)
 Letter.mockImplementation(() => <div />)
 
 describe('WordsContainer', () => {
-  var buildWordsContainer = ((words, currentInput, pastInput) => {
-    return TestUtils.renderIntoDocument(
-      <WordsContainer words={words} currentInput={currentInput} pastInput={pastInput}/>
-    );
-  });
 
   it('renders words and letters without color if no input', () => {
     let words = ["a", "b"]
