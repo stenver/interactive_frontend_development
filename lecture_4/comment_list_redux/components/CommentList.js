@@ -13,6 +13,12 @@ const CommentList = (props) => {
   );
 };
 CommentList.propTypes = {
-  comments: React.PropTypes.array.isRequired,
+  comments: React.PropTypes.arrayOf(
+    React.PropTypes.shape({
+      author: React.PropTypes.string.isRequired,
+      text: React.PropTypes.string.isRequired,
+      id: React.PropTypes.number.isRequired
+    })
+  ).isRequired,
 };
 export { CommentList as default };

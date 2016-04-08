@@ -2,27 +2,22 @@ import React from "react";
 import ReactDOM from "react-dom";
 import CommentBox from "../components/CommentBox";
 import { connect } from 'react-redux'
-import { addComment } from '../actions'
-
-const CommentBoxContainer = ({addCommentBounded, comments}) => {
-  return (
-	<CommentBox
-	  comments={comments}
-	  onCommentSubmit={addCommentBounded}
-	/>
-  );
-};
+import { addComment, setAuthor, setText } from '../actions'
 
 const mapStateToProps = (state) => {
   return {
-	comments: state.comments
-  }
+    comments: state.comments,
+    text: state.text,
+    author: state.author
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-	addCommentBounded: ({text, author}) => dispatch(addComment(text, author))
+    handleSubmit: (text, author) => dispatch(addComment(text, author)),
+    handleAuthorChange: (author) => dispatch(setAuthor(author)),
+    handleTextChange: (text) => dispatch(setText(text))
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CommentBoxContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(CommentBox);

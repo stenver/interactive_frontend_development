@@ -7,3 +7,17 @@ export const addComment = (author, text) => {
     payload: { author: author, text: text, id: nextId++}
   }
 }
+
+export const setAuthor = (author) => {
+  return {
+    type: "SET_AUTHOR",
+    payload: author
+  }
+}
+
+export const setText = (text) => {
+  return {
+    type: "SET_TEXT",
+    payload: text
+  }
+}
