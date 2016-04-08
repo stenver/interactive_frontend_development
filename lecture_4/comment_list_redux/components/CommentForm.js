@@ -1,48 +1,40 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-var CommentForm = React.createClass({
-  getInitialState: function() {
-    return {author: '', text: ''};
-  },
-  handleAuthorChange: function(e) {
-    this.setState({author: e.target.value});
-  },
-  handleTextChange: function(e) {
-    this.setState({text: e.target.value});
-  },
-  handleSubmit: function(e) {
-    e.preventDefault();
-    var author = this.state.author.trim();
-    var text = this.state.text.trim();
-    if (!text || !author) {
-      return;
-    }
-    this.props.onCommentSubmit({author: author, text: text});
-    this.setState({author: '', text: ''});
-  },
+const CommentForm = (props) => {
+  const handleAuthorChange = (event) => props.handleAuthorChange(event.target.value);
+  const handleTextChange = (event) => props.handleTextChange(event.target.value);
 
-  render: function() {
-    return (
-      <form className="commentForm" onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          placeholder="Your name"
-          value={this.state.author}
-          onChange={this.handleAuthorChange}
-        />
-        <input
-          type="text"
-          placeholder="Your text"
-          value={this.state.text}
-          onChange={this.handleTextChange}
-        />
-        <input type="submit" value="Post" />
-      </form>
-    );
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.handleSubmit(props.author, props.text);
   }
-});
-CommentForm.propTypes = {
-  onCommentSubmit: React.PropTypes.func.isRequired,
+
+  return (
+    <form className="commentForm" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Your name"
+        value={props.author}
+        onChange={handleAuthorChange}
+      />
+      <input
+        type="text"
+        placeholder="Your text"
+        value={props.text}
+        onChange={handleTextChange}
+      />
+      <input type="submit" value="Post" />
+    </form>
+  );
 };
-export { CommentForm as default };
+
+CommentForm.propTypes = {
+  author: React.PropTypes.string.isRequired,
+  text: React.PropTypes.string.isRequired,
+  handleAuthorChange: React.PropTypes.func.isRequired,
+  handleTextChange: React.PropTypes.func.isRequired,
+  handleSubmit: React.PropTypes.func.isRequired
+};
+
+export default CommentForm;
