@@ -8,13 +8,6 @@ var StatsContainer = React.createClass({
     startTime: React.PropTypes.number.isRequired,
   },
 
-  getInitialState: function() {
-    return {
-      wordsPerMinute: 0,
-      accuaracy: 100,
-    }
-  },
-
   calculateAccuaracy: function() {
     let pastWordsForComparing = this.props.words.slice(0, this.props.pastInput.length);
     let matchingWords = 0;
