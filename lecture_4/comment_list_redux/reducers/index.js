@@ -21,10 +21,10 @@ const commentReducer = (state = initialState, action) => {
     } else {
       return state;
     }
-  case 'SET_AUTHOR':
-    return merge(state, {author: action.payload})
-  case 'SET_TEXT':
-    return merge(state, {text: action.payload})
+    case 'SET_AUTHOR':
+      return merge(state, {author: action.payload})
+    case 'SET_TEXT':
+      return merge(state, {text: action.payload})
 	default:
 	  return state
   }
