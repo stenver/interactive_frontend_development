@@ -17,7 +17,7 @@ describe('StatsContainer', () => {
     );
   });
 
-  it('calculates accuaracy', () => {
+  it('calculates accuracy', () => {
     var startTime=Math.floor(Date.now() / 1000);
 
     let statsContainer = buildStatsContainer(["a", "c"], ["a", "b"], startTime);
@@ -49,6 +49,6 @@ describe('StatsContainer', () => {
       <StatsContainer words={words} pastInput={pastInput} startTime={startTime}/>
     );
     let stats = renderer.getRenderOutput();
-    expect(stats.props).toEqual({wordsPerMinute: "2.00", accuaracy: "50"});
+    expect(stats.props).toEqual({wordsPerMinute: "2.00", accuracy: "50"});
   });
 });

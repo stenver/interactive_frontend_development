@@ -5,7 +5,7 @@ define(["react", "./StatsContainer.js", "./WordsContainer.js", "./TypingContaine
       return {
         words: ["does", "short", "unit", "air", "our", "find", "war", "morning", "they"],
         wordsPerMinute: 30,
-        accuaracy: 90
+        accuracy: 90
       };
     },
 
@@ -15,7 +15,7 @@ define(["react", "./StatsContainer.js", "./WordsContainer.js", "./TypingContaine
           <div className="wordsbox">
             <StatsContainer
               wordsPerMinute={this.props.wordsPerMinute}
-              accuaracy={this.props.accuaracy}
+              accuracy={this.props.accuracy}
             />
             <WordsContainer words={this.props.words} />
             <TypingContainer />
