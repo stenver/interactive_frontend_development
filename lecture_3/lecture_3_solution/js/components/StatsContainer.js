@@ -30,7 +30,7 @@ var StatsContainer = React.createClass({
     return (
       <Stats
         wordsPerMinute={this.calculateWordsPerMinute()}
-        accuaracy={this.calculateAccuaracy()}
+        accuracy={this.calculateAccuaracy()}
       />
     );
   }

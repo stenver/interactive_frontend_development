@@ -9,10 +9,10 @@ import Stats from '../Stats';
 
 describe('Stats', () => {
 
-  var buildStats = ((accuaracy, wordsPerMinute) => {
+  var buildStats = ((accuracy, wordsPerMinute) => {
     let renderer = TestUtils.createRenderer();
     renderer.render(
-      <Stats accuaracy={accuaracy} wordsPerMinute={wordsPerMinute} />
+      <Stats accuracy={accuracy} wordsPerMinute={wordsPerMinute} />
     );
     return renderer.getRenderOutput();
   });
@@ -20,8 +20,8 @@ describe('Stats', () => {
   it('displays the stats', () => {
     let stats = buildStats("100", "60");
     let wordsPerMinute = stats.props.children[1];
-    let accuaracy = stats.props.children[3];
+    let accuracy = stats.props.children[3];
     expect(wordsPerMinute.props.children).toEqual("60");
-    expect(accuaracy.props.children).toEqual(["100", "%"]);
+    expect(accuracy.props.children).toEqual(["100", "%"]);
   });
 });
