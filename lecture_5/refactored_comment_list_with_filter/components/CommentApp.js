@@ -4,9 +4,9 @@ import FilteredCommentList from "../containers/FilteredCommentList";
 import CommentFormContainer from "../containers/CommentFormContainer";
 import FilterContainer from "../containers/FilterContainer";
 
-const CommentBox = () => {
+const CommentApp = () => {
   return (
-    <div className="commentBox">
+    <div className="commentApp">
       <h1>Comments</h1>
       <FilteredCommentList />
       <CommentFormContainer />
@@ -15,4 +15,4 @@ const CommentBox = () => {
   );
 };
 
-export default CommentBox;
+export default CommentApp;
