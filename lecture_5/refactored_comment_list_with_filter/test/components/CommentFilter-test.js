@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
-import Filter from '../../components/Filter';
+import CommentFilter from '../../components/CommentFilter';
 import {renderWithWrapperAndFind} from '../Wrapper';
 
 const defaultProps = {
@@ -12,10 +12,10 @@ const defaultProps = {
   onSelectAuthor: sinon.stub()
 }
 
-describe('Filter', () => {
+describe('CommentFilter', () => {
   var buildFilter = ((props) => {
     const allProps = Object.assign({}, defaultProps, props)
-    return renderWithWrapperAndFind(React.createElement(Filter, allProps), 'comment-filter')
+    return renderWithWrapperAndFind(React.createElement(CommentFilter, allProps), 'comment-filter')
   });
 
   it('has default option All', () => {
