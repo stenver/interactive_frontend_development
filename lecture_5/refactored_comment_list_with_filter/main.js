@@ -3,13 +3,13 @@ import ReactDOM from "react-dom";
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import commentsApp from './reducers'
-import CommentBox from "./components/CommentBox";
+import CommentApp from "./components/CommentApp";
 
 let store = createStore(commentsApp)
 
 ReactDOM.render(
   <Provider store={store}>
-    <CommentBox />
+    <CommentApp />
   </Provider>,
   document.getElementById('content')
 );
