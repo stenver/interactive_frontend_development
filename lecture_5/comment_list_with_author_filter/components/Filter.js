@@ -26,6 +26,7 @@ Filter.propTypes = {
   authors: React.PropTypes.arrayOf(
     React.PropTypes.string.isRequired
   ).isRequired,
+  selectedAuthor: React.PropTypes.string.isRequired,
   onSelectAuthor: React.PropTypes.func.isRequired
 };
 
