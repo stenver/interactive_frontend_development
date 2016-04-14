@@ -1,16 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import FilteredCommentList from "../containers/FilteredCommentList";
-import CommentFormContainer from "../containers/CommentFormContainer";
-import FilterContainer from "../containers/FilterContainer";
+import CommentForm from "../containers/CommentForm";
+import Filter from "../containers/Filter";
 
 const CommentApp = () => {
   return (
     <div className="commentApp">
       <h1>Comments</h1>
       <FilteredCommentList />
-      <CommentFormContainer />
-      <FilterContainer />
+      <CommentForm />
+      <Filter />
     </div>
   );
 };

@@ -5,8 +5,8 @@ import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import CommentApp from '../../components/CommentApp';
 import FilteredCommentList from '../../containers/FilteredCommentList';
-import CommentFormContainer from '../../containers/CommentFormContainer';
-import FilterContainer from '../../containers/FilterContainer';
+import CommentForm from '../../containers/CommentForm';
+import Filter from '../../containers/Filter';
 
 describe('CommentApp', () => {
   var buildCommentApp = (() => {
@@ -38,14 +38,14 @@ describe('CommentApp', () => {
     let app = buildCommentApp();
     let commentForm = app.props.children[2];
 
-    expect(commentForm.type).to.eq(CommentFormContainer);
+    expect(commentForm.type).to.eq(CommentForm);
   });
 
-  it('creates FilterContainer', () => {
+  it('creates Filter', () => {
     let app = buildCommentApp();
     let filter = app.props.children[3];
 
-    expect(filter.type).to.eq(FilterContainer);
+    expect(filter.type).to.eq(Filter);
   });
 });
 
