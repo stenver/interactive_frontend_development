@@ -4,7 +4,7 @@ import Word from "../components/Word";
 import Letter from "../components/Letter";
 import { connect } from 'react-redux'
 
-const WordsContainer = (props) => {
+export const WordsContainer = (props) => {
 
   const buildLetters = (word) => {
     let letters = [];
