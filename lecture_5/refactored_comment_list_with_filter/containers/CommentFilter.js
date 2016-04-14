@@ -1,4 +1,4 @@
-import Filter from "../components/Filter";
+import CommentFilter from "../components/CommentFilter";
 import { connect } from 'react-redux'
 import { setAuthorFilter } from '../actions'
 
@@ -23,4 +23,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Filter)
+export default connect(mapStateToProps, mapDispatchToProps)(CommentFilter)
