@@ -13,9 +13,12 @@ const Filter = ({authors, selectedAuthor, onSelectAuthor}) => {
   const onChange = (event) => onSelectAuthor(event.target.value)
 
   return (
-    <select className='comment-filter' value={selectedAuthor} onChange={onChange}>
-      {options}
-    </select>
+    <div className='comment-filter'>
+      <h3>Filter by author: </h3>
+      <select value={selectedAuthor} onChange={onChange}>
+        {options}
+      </select>
+    </div>
   )
 };
 
