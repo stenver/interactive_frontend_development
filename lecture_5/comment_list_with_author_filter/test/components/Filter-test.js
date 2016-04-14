@@ -20,19 +20,30 @@ describe('Filter', () => {
 
   it('has default option All', () => {
     let filter = buildFilter();
-    let optionNodes = filter.children
+    let select = filter.children[1]
+    let optionNodes = select.children
 
     expect(optionNodes.length).to.eq(1)
     expect(optionNodes[0].value).to.eq('')
     expect(optionNodes[0].text).to.eq('All')
-    expect(filter.value).to.eq('')
+    expect(select.value).to.eq('')
   });
+
+  it('has header for selecting author', () => {
+    let filter = buildFilter()
+    let header = filter.children[0]
+
+    expect(header.tagName).to.eq('H3')
+    expect(header.textContent).to.eq('Filter by author: ')
+  })
 
   it('creates options for authors', () => {
     let filter = buildFilter({
       authors: ["a", "b"]
     });
-    let optionNodes = filter.children
+    let select = filter.children[1]
+    let optionNodes = select.children
+
     expect(optionNodes.length).to.eq(3)
     expect(optionNodes[1].value).to.eq("a")
     expect(optionNodes[1].text).to.eq("a")
@@ -46,8 +57,9 @@ describe('Filter', () => {
       authors: ["a", "b"],
       onSelectAuthor: onSelectAuthor
     });
-    filter.value = "a"
-    TestUtils.Simulate.change(filter);
+    let select = filter.children[1]
+    select.value = "a"
+    TestUtils.Simulate.change(select);
     expect(onSelectAuthor).to.have.been.calledWith("a")
   })
 });

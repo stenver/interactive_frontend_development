@@ -7,7 +7,8 @@ const initialText = '';
 const initialState = {
   comments: initialComments,
   author: initialAuthor,
-  text: initialText
+  text: initialText,
+  filteredByAuthor: ''
 }
 
 const merge = (obj1, obj2) => Object.assign({}, obj1, obj2)
