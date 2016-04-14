@@ -1,7 +1,7 @@
 import React from "react";
 
 const Typing = (props) => {
-  const handleUserInput = (event) => props.handleAuthorChange(event.target.value);
+  const handleUserInput = (event) => props.onUserInput(event.target.value);
 
   return(
     <input

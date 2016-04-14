@@ -1,4 +1,3 @@
-
 const words = ["does", "short", "unit", "air", "our", "find", "war", "morning", "they"];
 const startTime = Math.floor(Date.now() / 1000);
 const currentInput = ''
@@ -24,8 +23,25 @@ const speedTyperReducer = (state = initialState, action) => {
         return merge(state, {currentInput: currentInput });
       }
     default:
-      state
+      return state;
   }
 }
+
+export const calculateAccuaracy = (state) => {
+  const pastWordsForComparing = state.words.slice(0, state.pastInput.length);
+  let matchingWords = 0;
+  pastWordsForComparing.forEach(function(element, index){
+    if (state.pastInput[index] == element){
+      matchingWords += 1;
+    }
+  });
+  return (matchingWords / state.pastInput.length * 100).toFixed(0);
+};
+
+export  const calculateWordsPerMinute = (state) => {
+  let now = Math.floor(Date.now() / 1000)
+  let minutesPassed = (now - state.startTime) / 60;
+  return (state.pastInput.length / minutesPassed).toFixed(2);
+};
 
 export default speedTyperReducer;
