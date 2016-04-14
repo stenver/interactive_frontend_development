@@ -9,22 +9,11 @@ import TypingContainer from "../../js/containers/TypingContainer";
 import StatsContainer from "../../js/containers/StatsContainer";
 
 describe('SpeedTyper', () => {
-  var words=["some", "words"]
-  var pastInput=["some", "input"]
-  var startTime=Date.now()
-  var currentInput="current"
-  var onUserInput=function(){}
 
-  var buildSpeedTyper = ((children) => {
+  var buildSpeedTyper = (() => {
     let renderer = TestUtils.createRenderer();
     renderer.render(
-      <SpeedTyper
-        words={words}
-        startTime={startTime}
-        currentInput={currentInput}
-        pastInput={pastInput}
-        onUserInput={onUserInput}
-      />
+      <SpeedTyper />
     );
     return renderer.getRenderOutput();
   });
@@ -34,11 +23,6 @@ describe('SpeedTyper', () => {
     let wordsBox = speedTyper.props.children
     let statsContainer = wordsBox.props.children[0]
     expect(statsContainer.type).to.eq(StatsContainer);
-    expect(statsContainer.props).to.eq({
-      words: words,
-      pastInput: pastInput,
-      startTime: startTime
-    });
   });
 
   it('renders the words container', () => {
@@ -46,11 +30,6 @@ describe('SpeedTyper', () => {
     let wordsBox = speedTyper.props.children
     let wordsContainer = wordsBox.props.children[1]
     expect(wordsContainer.type).to.eq(WordsContainer);
-    expect(wordsContainer.props).to.eq({
-      words: words,
-      pastInput: pastInput,
-      currentInput: currentInput
-    });
   });
 
   it('renders the typing container', () => {
@@ -58,9 +37,5 @@ describe('SpeedTyper', () => {
     let wordsBox = speedTyper.props.children
     let typingContainer = wordsBox.props.children[2]
     expect(typingContainer.type).to.eq(TypingContainer);
-    expect(typingContainer.props).to.eq({
-      currentInput: currentInput,
-      onUserInput: onUserInput
-    });
   });
 });

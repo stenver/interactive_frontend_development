@@ -20,6 +20,6 @@ describe('Stats', () => {
     let wordsPerMinute = stats.props.children[1];
     let accuaracy = stats.props.children[3];
     expect(wordsPerMinute.props.children).to.eq("60");
-    expect(accuaracy.props.children).to.eq(["100", "%"]);
+    expect(accuaracy.props.children).to.deep.eq(["100", "%"]);
   });
 });
