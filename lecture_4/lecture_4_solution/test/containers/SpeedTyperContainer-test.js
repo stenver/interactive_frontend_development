@@ -1,14 +1,9 @@
 'use strict';
 
-jest.unmock('../SpeedTyperContainer');
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
-import SpeedTyperContainer from "../SpeedTyperContainer";
-import SpeedTyper from "../SpeedTyper";
-
-SpeedTyper.mockImplementation(() => <div />)
+import SpeedTyper from "../../js/components/SpeedTyper";
 
 describe('SpeedTyperContainer', () => {
   var buildSpeedTyperContainer = (() => {
@@ -20,13 +15,13 @@ describe('SpeedTyperContainer', () => {
   it('changes current input if letter was entered', () => {
     let speedTyperContainer = buildSpeedTyperContainer();
     speedTyperContainer.handleUserInput("something");
-    expect(speedTyperContainer.state).toEqual({currentInput: "something", pastInput: []});
+    expect(speedTyperContainer.state).to.eq({currentInput: "something", pastInput: []});
   });
 
   it('sets user input to past input if current input last letter was space', () => {
     let speedTyperContainer = buildSpeedTyperContainer();
     speedTyperContainer.handleUserInput("something ");
-    expect(speedTyperContainer.state).toEqual({currentInput: "", pastInput: ["something"]});
+    expect(speedTyperContainer.state).to.eq({currentInput: "", pastInput: ["something"]});
   });
 
   it('renders SpeedTyper', () => {
@@ -35,6 +30,6 @@ describe('SpeedTyperContainer', () => {
       <SpeedTyperContainer />
     );
     let speedTyper = renderer.getRenderOutput();
-	expect(speedTyper.type).toEqual(SpeedTyper);
+	expect(speedTyper.type).to.eq(SpeedTyper);
   });
 });

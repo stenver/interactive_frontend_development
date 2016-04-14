@@ -1,14 +1,12 @@
 'use strict';
 
-jest.unmock('../SpeedTyper');
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
-import SpeedTyper from '../SpeedTyper';
-import WordsContainer from "../WordsContainer";
-import TypingContainer from "../TypingContainer";
-import StatsContainer from "../StatsContainer";
+import SpeedTyper from '../../js/components/SpeedTyper';
+import WordsContainer from "../../js/containers/WordsContainer";
+import TypingContainer from "../../js/containers/TypingContainer";
+import StatsContainer from "../../js/containers/StatsContainer";
 
 describe('SpeedTyper', () => {
   var words=["some", "words"]
@@ -35,8 +33,8 @@ describe('SpeedTyper', () => {
     let speedTyper = buildSpeedTyper("green");
     let wordsBox = speedTyper.props.children
     let statsContainer = wordsBox.props.children[0]
-    expect(statsContainer.type).toBe(StatsContainer);
-    expect(statsContainer.props).toEqual({
+    expect(statsContainer.type).to.eq(StatsContainer);
+    expect(statsContainer.props).to.eq({
       words: words,
       pastInput: pastInput,
       startTime: startTime
@@ -47,8 +45,8 @@ describe('SpeedTyper', () => {
     let speedTyper = buildSpeedTyper("green");
     let wordsBox = speedTyper.props.children
     let wordsContainer = wordsBox.props.children[1]
-    expect(wordsContainer.type).toBe(WordsContainer);
-    expect(wordsContainer.props).toEqual({
+    expect(wordsContainer.type).to.eq(WordsContainer);
+    expect(wordsContainer.props).to.eq({
       words: words,
       pastInput: pastInput,
       currentInput: currentInput
@@ -59,8 +57,8 @@ describe('SpeedTyper', () => {
     let speedTyper = buildSpeedTyper("green");
     let wordsBox = speedTyper.props.children
     let typingContainer = wordsBox.props.children[2]
-    expect(typingContainer.type).toBe(TypingContainer);
-    expect(typingContainer.props).toEqual({
+    expect(typingContainer.type).to.eq(TypingContainer);
+    expect(typingContainer.props).to.eq({
       currentInput: currentInput,
       onUserInput: onUserInput
     });

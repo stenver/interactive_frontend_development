@@ -1,11 +1,9 @@
 'use strict';
 
-jest.unmock('../Stats');
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
-import Stats from '../Stats';
+import Stats from '../../js/components/Stats';
 
 describe('Stats', () => {
 
@@ -21,7 +19,7 @@ describe('Stats', () => {
     let stats = buildStats("100", "60");
     let wordsPerMinute = stats.props.children[1];
     let accuaracy = stats.props.children[3];
-    expect(wordsPerMinute.props.children).toEqual("60");
-    expect(accuaracy.props.children).toEqual(["100", "%"]);
+    expect(wordsPerMinute.props.children).to.eq("60");
+    expect(accuaracy.props.children).to.eq(["100", "%"]);
   });
 });

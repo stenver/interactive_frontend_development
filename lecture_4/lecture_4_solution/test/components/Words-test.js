@@ -1,11 +1,9 @@
 'use strict';
 
-jest.unmock('../Words');
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
-import Words from '../Words';
+import Words from '../../js/components/Words';
 
 describe('Words', () => {
 
@@ -20,6 +18,6 @@ describe('Words', () => {
   it('renders the children', () => {
     let words = buildWords("green");
     let renderedChildren = words.props.children.props.children
-    expect(renderedChildren).toEqual("green");
+    expect(renderedChildren).to.eq("green");
   });
 });

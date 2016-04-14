@@ -1,11 +1,9 @@
 'use strict';
 
-jest.unmock('../Letter');
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
-import Letter from '../Letter';
+import Letter from '../../js/components/Letter';
 
 describe('Letter', () => {
 
@@ -29,7 +27,7 @@ describe('Letter', () => {
 
   it('sets the class and text', () => {
     let letter = buildLetter("green", "L");
-    expect(letter.className).toEqual("letter green");
-    expect(letter.textContent).toEqual("L");
+    expect(letter.className).to.eq("letter green");
+    expect(letter.textContent).to.eq("L");
   });
 });

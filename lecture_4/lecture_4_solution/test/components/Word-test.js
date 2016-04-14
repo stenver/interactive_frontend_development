@@ -1,11 +1,9 @@
 'use strict';
 
-jest.unmock('../Word');
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
-import Word from '../Word';
+import Word from '../../js/components/Word';
 
 describe('Word', () => {
 
@@ -29,7 +27,7 @@ describe('Word', () => {
 
   it('sets the class and text', () => {
     let word = buildWord("green", "L");
-    expect(word.className).toEqual("word green");
-    expect(word.textContent).toEqual("L");
+    expect(word.className).to.eq("word green");
+    expect(word.textContent).to.eq("L");
   });
 });

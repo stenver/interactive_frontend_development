@@ -1,14 +1,10 @@
 'use strict';
 
-jest.unmock('../StatsContainer');
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
-import StatsContainer from "../StatsContainer";
-import Stats from "../Stats";
-
-Stats.mockImplementation(() => <div />)
+import StatsContainer from "../../js/containers/StatsContainer";
+import Stats from "../../js/components/Stats";
 
 describe('StatsContainer', () => {
   var buildStatsContainer = ((words, pastInput, startTime) => {
@@ -21,10 +17,10 @@ describe('StatsContainer', () => {
     var startTime=Math.floor(Date.now() / 1000);
 
     let statsContainer = buildStatsContainer(["a", "c"], ["a", "b"], startTime);
-    expect(statsContainer.calculateAccuaracy()).toEqual("50");
+    expect(statsContainer.calculateAccuaracy()).to.eq("50");
 
     statsContainer = buildStatsContainer(["a", "b"], ["a", "b"], startTime);
-    expect(statsContainer.calculateAccuaracy()).toEqual("100");
+    expect(statsContainer.calculateAccuaracy()).to.eq("100");
   });
 
   it('calculates words per minute', () => {
@@ -32,10 +28,10 @@ describe('StatsContainer', () => {
     let startTime = Math.floor((Date.now() - minute) / 1000);
 
     let statsContainer = buildStatsContainer([], ["a", "b"], startTime);
-    expect(statsContainer.calculateWordsPerMinute()).toEqual("2.00");
+    expect(statsContainer.calculateWordsPerMinute()).to.eq("2.00");
 
     statsContainer = buildStatsContainer([], ["a", "b", "c", "d"], startTime);
-    expect(statsContainer.calculateWordsPerMinute()).toEqual("4.00");
+    expect(statsContainer.calculateWordsPerMinute()).to.eq("4.00");
   });
 
   it('renders Stats with correct props', () => {
@@ -49,6 +45,6 @@ describe('StatsContainer', () => {
       <StatsContainer words={words} pastInput={pastInput} startTime={startTime}/>
     );
     let stats = renderer.getRenderOutput();
-    expect(stats.props).toEqual({wordsPerMinute: "2.00", accuaracy: "50"});
+    expect(stats.props).to.eq({wordsPerMinute: "2.00", accuaracy: "50"});
   });
 });

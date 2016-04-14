@@ -1,18 +1,12 @@
 'use strict';
 
-jest.unmock('../WordsContainer');
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
-import WordsContainer from "../WordsContainer";
-import Words from "../Words";
-import Word from "../Word";
-import Letter from "../Letter";
-
-Words.mockImplementation(() => <div />)
-Word.mockImplementation(() => <div />)
-Letter.mockImplementation(() => <div />)
+import WordsContainer from "../../js/containers/WordsContainer";
+import Words from "../../js/components/Words";
+import Word from "../../js/components/Word";
+import Letter from "../../js/components/Letter";
 
 describe('WordsContainer', () => {
 
@@ -29,12 +23,12 @@ describe('WordsContainer', () => {
 
     let letters = wordsContainer.props.children[0];
     let letter = letters.props.children[0]
-    expect(letter.props).toEqual({color: "none", children: "a"});
-    expect(letter.key).toEqual("0");
+    expect(letter.props).to.eq({color: "none", children: "a"});
+    expect(letter.key).to.eq("0");
 
     let word = wordsContainer.props.children[1]
-    expect(word.props).toEqual({color: "none", children: "b"});
-    expect(word.key).toEqual("b");
+    expect(word.props).to.eq({color: "none", children: "b"});
+    expect(word.key).to.eq("b");
   });
 
   it('renders words and letters with correct colors depending on input', () => {
@@ -49,29 +43,29 @@ describe('WordsContainer', () => {
     let wordsContainer = renderer.getRenderOutput();
 
     let correct_word = wordsContainer.props.children[0]
-    expect(correct_word.props).toEqual({color: "green", children: "a"});
-    expect(correct_word.key).toEqual("a");
+    expect(correct_word.props).to.eq({color: "green", children: "a"});
+    expect(correct_word.key).to.eq("a");
 
     let incorrect_word = wordsContainer.props.children[1]
-    expect(incorrect_word.props).toEqual({color: "red", children: "b"});
-    expect(incorrect_word.key).toEqual("b");
+    expect(incorrect_word.props).to.eq({color: "red", children: "b"});
+    expect(incorrect_word.key).to.eq("b");
 
     let letters = wordsContainer.props.children[2];
 
     let correct_letter = letters.props.children[0]
-    expect(correct_letter.props).toEqual({color: "green", children: "a"});
-    expect(correct_letter.key).toEqual("0");
+    expect(correct_letter.props).to.eq({color: "green", children: "a"});
+    expect(correct_letter.key).to.eq("0");
 
     let incorrect_letter = letters.props.children[1]
-    expect(incorrect_letter.props).toEqual({color: "red", children: "b"});
-    expect(incorrect_letter.key).toEqual("1");
+    expect(incorrect_letter.props).to.eq({color: "red", children: "b"});
+    expect(incorrect_letter.key).to.eq("1");
 
     let untyped_letter = letters.props.children[2]
-    expect(untyped_letter.props).toEqual({color: "none", children: "c"});
-    expect(untyped_letter.key).toEqual("2");
+    expect(untyped_letter.props).to.eq({color: "none", children: "c"});
+    expect(untyped_letter.key).to.eq("2");
 
     let untyped_word = wordsContainer.props.children[3]
-    expect(untyped_word.props).toEqual({color: "none", children: "d"});
-    expect(untyped_word.key).toEqual("d");
+    expect(untyped_word.props).to.eq({color: "none", children: "d"});
+    expect(untyped_word.key).to.eq("d");
   });
 });
