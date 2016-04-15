@@ -28,7 +28,7 @@
     "test": "mocha",
     "test-debug": "mocha --debug-brk",
     "test-debug-bugger": "./node_modules/bugger/bin/bugger.js  --brk ./node_modules/mocha/bin/_mocha",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server --inline"
   },
   "author": "",
   "license": "MIT"
