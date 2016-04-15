@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Fetcher from "../components/Fetcher";
 import { connect } from 'react-redux'
-import { commentFetchRequested, fetchPost } from '../actions'
+import { commentFetchRequested, fetchPost, stopCommentFetch } from '../actions'
 
 const mapStateToProps = (state) => {
   return {
@@ -15,6 +15,9 @@ const mapDispatchToProps = (dispatch) => {
     onFetch: () => {
       dispatch(commentFetchRequested())
       dispatch(fetchPost())
+    },
+    onCancel: () => {
+      dispatch(stopCommentFetch())
     }
   }
 };
