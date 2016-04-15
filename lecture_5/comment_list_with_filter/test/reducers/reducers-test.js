@@ -13,9 +13,14 @@ describe('reducers', () => {
     it('has initial comment', () => {
       const originalState = reducer(undefined, {})
       expect(originalState.comments).to.contain({
-        id: 0,
+        id: -1,
         author: "Scooby",
         text: "Doo"
+      })
+      expect(originalState.comments).to.contain({
+        id: 0,
+        author: "Emma",
+        text: "No!"
       })
     });
 
