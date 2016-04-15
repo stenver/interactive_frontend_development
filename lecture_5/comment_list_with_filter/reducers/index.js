@@ -1,6 +1,17 @@
 import { combineReducers } from 'redux'
 
-const initialComments = [{author: "Scooby", text: "Doo", id: 0}];
+const scoobyComment = {
+  author: "Scooby",
+  text: "Doo",
+  id: -1
+};
+const emmaComment = {
+  author: "Emma",
+  text: "No!",
+  id: 0
+}
+
+const initialComments = [scoobyComment, emmaComment];
 const initialAuthor = '';
 const initialText = '';
 
