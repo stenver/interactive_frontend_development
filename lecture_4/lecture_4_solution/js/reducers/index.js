@@ -29,12 +29,9 @@ const speedTyperReducer = (state = initialState, action) => {
 
 export const calculateAccuracy = (state) => {
   const pastWordsForComparing = state.words.slice(0, state.pastInput.length);
-  let matchingWords = 0;
-  pastWordsForComparing.forEach(function(element, index){
-    if (state.pastInput[index] == element){
-      matchingWords += 1;
-    }
-  });
+  const matchingWords = pastWordsForComparing.filter((element, index) => {
+    return state.pastInput[index] == element;
+  }).length
   return (matchingWords / state.pastInput.length * 100).toFixed(0);
 };
 
