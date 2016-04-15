@@ -52,15 +52,15 @@ describe('Word', () => {
     let renderedLetters = renderedWord.props.children;
 
     let correct_letter = renderedLetters[0]
-    expect(correct_letter.props).to.deep.eq({color: "green", children: "a"});
+    expect(correct_letter.props).to.deep.eq({color: "green", letter: "a"});
     expect(correct_letter.key).to.eq("0");
 
     let incorrect_letter = renderedLetters[1]
-    expect(incorrect_letter.props).to.deep.eq({color: "red", children: "b"});
+    expect(incorrect_letter.props).to.deep.eq({color: "red", letter: "b"});
     expect(incorrect_letter.key).to.eq("1");
 
     let untyped_letter = renderedLetters[2]
-    expect(untyped_letter.props).to.deep.eq({color: "none", children: "c"});
+    expect(untyped_letter.props).to.deep.eq({color: "none", letter: "c"});
     expect(untyped_letter.key).to.eq("2");
   });
 });

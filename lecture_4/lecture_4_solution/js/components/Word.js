@@ -11,7 +11,7 @@ const Word = (props) => {
         if (i < props.currentInput.length){
           color = (props.currentInput[i] == letter ? "green" : "red")
         }
-        letters.push(<Letter key={i} color={color}>{letter}</Letter>)
+        letters.push(<Letter key={i} color={color} letter={letter} />)
       };
       return letters;
     }else{

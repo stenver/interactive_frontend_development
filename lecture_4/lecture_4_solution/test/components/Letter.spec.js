@@ -15,10 +15,10 @@ describe('Letter', () => {
     }
   });
 
-  var buildLetter = ((color, children) => {
+  var buildLetter = ((color, letter) => {
     let dom = TestUtils.renderIntoDocument(
       <Wrapper>
-        <Letter color={color} >{children}</Letter>
+        <Letter color={color} letter={letter} />
       </Wrapper>
     );
 
