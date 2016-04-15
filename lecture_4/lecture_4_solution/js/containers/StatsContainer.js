@@ -5,7 +5,7 @@ import { calculateAccuracy, calculateWordsPerMinute } from '../reducers';
 
 const mapStateToProps = (state) => {
   return {
-    accuaracy: calculateAccuracy(state),
+    accuracy: calculateAccuracy(state),
     wordsPerMinute: calculateWordsPerMinute(state)
   }
 };

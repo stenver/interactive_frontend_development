@@ -7,10 +7,10 @@ import Stats from '../../js/components/Stats';
 
 describe('Stats', () => {
 
-  var buildStats = ((accuaracy, wordsPerMinute) => {
+  var buildStats = ((accuracy, wordsPerMinute) => {
     let renderer = TestUtils.createRenderer();
     renderer.render(
-      <Stats accuaracy={accuaracy} wordsPerMinute={wordsPerMinute} />
+      <Stats accuracy={accuracy} wordsPerMinute={wordsPerMinute} />
     );
     return renderer.getRenderOutput();
   });
@@ -18,8 +18,8 @@ describe('Stats', () => {
   it('displays the stats', () => {
     let stats = buildStats("100", "60");
     let wordsPerMinute = stats.props.children[1];
-    let accuaracy = stats.props.children[3];
+    let accuracy = stats.props.children[3];
     expect(wordsPerMinute.props.children).to.eq("60");
-    expect(accuaracy.props.children).to.deep.eq(["100", "%"]);
+    expect(accuracy.props.children).to.deep.eq(["100", "%"]);
   });
 });

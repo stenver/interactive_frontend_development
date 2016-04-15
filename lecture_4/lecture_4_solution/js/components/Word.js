@@ -4,16 +4,13 @@ import Letter from "../components/Letter";
 const Word = (props) => {
   const buildLetters = () => {
     if (props.isCurrentInput) {
-      let letters = [];
-      for(var i = 0; i < props.letters.length; i++) {
-        let letter = props.letters[i]
-        let color = "none"
-        if (i < props.currentInput.length){
-          color = (props.currentInput[i] == letter ? "green" : "red")
+      return props.letters.split('').map((letter, index) => {
+        let color = "none";
+        if (index < props.currentInput.length){
+          color = (props.currentInput[index] == letter ? "green" : "red")
         }
-        letters.push(<Letter key={i} color={color} letter={letter} />)
-      };
-      return letters;
+        return <Letter key={index} color={color} letter={letter} />
+      })
     }else{
       return props.letters;
     }

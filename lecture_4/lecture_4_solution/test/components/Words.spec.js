@@ -40,20 +40,20 @@ describe('Words', () => {
     let renderedWords = renderer.getRenderOutput();
 
     let wordComponents = renderedWords.props.children.props.children
-    let correct_word = wordComponents[0]
-    expect(correct_word.props).to.deep.eq({color: "green", currentInput: 'ac', isCurrentInput: false, letters: "a"});
-    expect(correct_word.key).to.eq("a");
+    let correctWord = wordComponents[0]
+    expect(correctWord.props).to.deep.eq({color: "green", currentInput: 'ac', isCurrentInput: false, letters: "a"});
+    expect(correctWord.key).to.eq("a");
 
-    let incorrect_word = wordComponents[1]
-    expect(incorrect_word.props).to.deep.eq({color: "red", currentInput: 'ac', isCurrentInput: false, letters: "b"});
-    expect(incorrect_word.key).to.eq("b");
+    let incorrectWord = wordComponents[1]
+    expect(incorrectWord.props).to.deep.eq({color: "red", currentInput: 'ac', isCurrentInput: false, letters: "b"});
+    expect(incorrectWord.key).to.eq("b");
 
-    let current_word = wordComponents[2];
-    expect(current_word.props).to.deep.eq({color: "none", currentInput: 'ac', isCurrentInput: true, letters: "abc"});
-    expect(current_word.key).to.eq("abc");
+    let currentWord = wordComponents[2];
+    expect(currentWord.props).to.deep.eq({color: "none", currentInput: 'ac', isCurrentInput: true, letters: "abc"});
+    expect(currentWord.key).to.eq("abc");
 
-    let untyped_word = wordComponents[3]
-    expect(untyped_word.props).to.deep.eq({color: "none", currentInput: 'ac', isCurrentInput: false, letters: "d"});
-    expect(untyped_word.key).to.eq("d");
+    let untypedWord = wordComponents[3]
+    expect(untypedWord.props).to.deep.eq({color: "none", currentInput: 'ac', isCurrentInput: false, letters: "d"});
+    expect(untypedWord.key).to.eq("d");
   });
 });

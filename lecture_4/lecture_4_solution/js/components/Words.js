@@ -3,24 +3,19 @@ import Word from "../components/Word";
 
 const Words = (props) => {
   const buildWords = () => {
-    let words = [];
-    props.words.forEach((word, index) => {
-      let letters = word;
+    return props.words.map((letters, index) => {
       let color = "none";
       if (index < props.pastInput.length) {
-        color = (props.pastInput[index] === word ? "green" : "red" )
+        color = (props.pastInput[index] === letters ? "green" : "red" )
       }
-      words.push(
-        <Word
+      return <Word
           isCurrentInput={index === props.pastInput.length}
           currentInput={props.currentInput}
           color={color}
           letters={letters}
-          key={word}
+          key={letters}
         />
-      )
     });
-    return words;
   };
 
   return(
