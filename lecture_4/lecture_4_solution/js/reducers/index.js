@@ -27,7 +27,7 @@ const speedTyperReducer = (state = initialState, action) => {
   }
 }
 
-export const calculateAccuaracy = (state) => {
+export const calculateAccuracy = (state) => {
   const pastWordsForComparing = state.words.slice(0, state.pastInput.length);
   let matchingWords = 0;
   pastWordsForComparing.forEach(function(element, index){
@@ -38,7 +38,7 @@ export const calculateAccuaracy = (state) => {
   return (matchingWords / state.pastInput.length * 100).toFixed(0);
 };
 
-export  const calculateWordsPerMinute = (state) => {
+export const calculateWordsPerMinute = (state) => {
   let now = Math.floor(Date.now() / 1000)
   let minutesPassed = (now - state.startTime) / 60;
   return (state.pastInput.length / minutesPassed).toFixed(2);

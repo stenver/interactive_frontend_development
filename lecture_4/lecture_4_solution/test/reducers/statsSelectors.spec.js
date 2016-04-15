@@ -1,12 +1,12 @@
-import { calculateAccuaracy, calculateWordsPerMinute } from '../../js/reducers'
+import { calculateAccuracy, calculateWordsPerMinute } from '../../js/reducers'
 
 describe('stats selectors', () => {
-  describe('calculateaccuaracy', () => {
-    it('should calculate accuaracy correctly', () => {
-      expect(calculateAccuaracy({ words: ["a", "b"], pastInput: ["a", "b"]})).to.eq('100')
-      expect(calculateAccuaracy({ words: ["a", "b"], pastInput: ["a", "c"]})).to.eq('50')
-      expect(calculateAccuaracy({ words: ["a", "b"], pastInput: ["b", "c"]})).to.eq('0')
-      expect(calculateAccuaracy({ words: ["a", "b", "c"], pastInput: ["a"]})).to.eq('100')
+  describe('calculateAccuracy', () => {
+    it('calculates accuracy', () => {
+      expect(calculateAccuracy({ words: ["a", "b"], pastInput: ["a", "b"]})).to.eq('100')
+      expect(calculateAccuracy({ words: ["a", "b"], pastInput: ["a", "c"]})).to.eq('50')
+      expect(calculateAccuracy({ words: ["a", "b"], pastInput: ["b", "c"]})).to.eq('0')
+      expect(calculateAccuracy({ words: ["a", "b", "c"], pastInput: ["a"]})).to.eq('100')
     })
   });
 
@@ -20,7 +20,7 @@ describe('stats selectors', () => {
       clock.restore();
     })
 
-    it('should calculate accuaracy correctly', () => {
+    it('should calculate words per minute correctly', () => {
       let one_min_ago = Math.floor(Date.now() / 1000) - 60;
       expect(calculateWordsPerMinute({ pastInput: ["a"], startTime: one_min_ago })).to.eq('1.00')
       expect(calculateWordsPerMinute({ pastInput: ["a", "b"], startTime: one_min_ago })).to.eq('2.00')

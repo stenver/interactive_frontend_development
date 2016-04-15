@@ -1,11 +1,11 @@
 import React from "react";
 import Stats from "../components/Stats";
 import { connect } from 'react-redux'
-import { calculateAccuaracy, calculateWordsPerMinute } from '../reducers';
+import { calculateAccuracy, calculateWordsPerMinute } from '../reducers';
 
 const mapStateToProps = (state) => {
   return {
-    accuaracy: calculateAccuaracy(state),
+    accuaracy: calculateAccuracy(state),
     wordsPerMinute: calculateWordsPerMinute(state)
   }
 };

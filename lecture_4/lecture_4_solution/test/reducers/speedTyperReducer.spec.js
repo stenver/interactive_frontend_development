@@ -1,7 +1,7 @@
 import speedTyperReducer from '../../js/reducers'
 
-describe('speedTyperReducer', () => {
-  it('should handle SET_CURRENT_INPUT when word given', () => {
+describe('speedTyperReducer SET_CURRENT_INPUT', () => {
+  it('should set word as current input when word given', () => {
     const result = speedTyperReducer({currentInput: "", pastInput: []}, {
       type: 'SET_CURRENT_INPUT',
       payload: { currentInput: "Skyrim" }
@@ -10,7 +10,7 @@ describe('speedTyperReducer', () => {
     expect(result.pastInput).to.deep.eq([])
   })
 
-  it('should handle SET_CURRENT_INPUT when word ending with space given', () => {
+  it('should set word to past input when word ending with space given', () => {
     const result = speedTyperReducer({currentInput: "", pastInput: []}, {
       type: 'SET_CURRENT_INPUT',
       payload: { currentInput: "Skyrim " }
@@ -19,7 +19,7 @@ describe('speedTyperReducer', () => {
     expect(result.pastInput).to.deep.eq(["Skyrim"])
   })
 
-  it('should handle SET_CURRENT_INPUT when space given', () => {
+  it('should put space into current input when space given', () => {
     const result = speedTyperReducer({currentInput: "", pastInput: []}, {
       type: 'SET_CURRENT_INPUT',
       payload: { currentInput: " " }
