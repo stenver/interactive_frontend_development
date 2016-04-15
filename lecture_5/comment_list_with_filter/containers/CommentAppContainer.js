@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import CommentBox from "../components/CommentBox";
+import CommentApp from "../components/CommentApp";
 import { connect } from 'react-redux'
 import { addComment, setAuthor, setText, setAuthorFilter } from '../actions'
 
@@ -39,4 +39,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CommentBox);
+export default connect(mapStateToProps, mapDispatchToProps)(CommentApp);

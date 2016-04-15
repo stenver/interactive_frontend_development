@@ -4,9 +4,9 @@ import CommentList from "./CommentList";
 import CommentForm from "./CommentForm";
 import Filter from "./Filter"
 
-const CommentBox = (props) => {
+const CommentApp = (props) => {
   return (
-    <div className="commentBox">
+    <div className="commentApp">
       <h1>Comments</h1>
       <CommentList comments={props.comments}/>
       <CommentForm
@@ -25,7 +25,7 @@ const CommentBox = (props) => {
   );
 };
 
-CommentBox.propTypes = {
+CommentApp.propTypes = {
   comments: React.PropTypes.array.isRequired,
   author: React.PropTypes.string.isRequired,
   text: React.PropTypes.string.isRequired,
@@ -37,4 +37,4 @@ CommentBox.propTypes = {
   filteredByAuthor: React.PropTypes.string
 };
 
-export default CommentBox;
+export default CommentApp;
