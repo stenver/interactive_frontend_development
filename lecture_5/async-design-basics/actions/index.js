@@ -34,7 +34,7 @@ export const fetchPost = () => {
   return dispatch => {
     timer = setTimeout(() => {
       dispatch(addComment('Server', 'Said so'));
-      dispatch(commentFetched())
+      dispatch(stopCommentFetch())
     }, 1000)
   }
 }
@@ -46,9 +46,10 @@ export const commentFetchRequested = () => {
   }
 }
 
-export const commentFetched = () => {
+export const stopCommentFetch = () => {
+  clearTimeout(timer)
   return {
-    type: "COMMENT_FETCHED",
+    type: "COMMENT_FETCH_STOPPED",
     payload: {}
   }
 }
