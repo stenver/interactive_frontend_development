@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
-import CommentBox from '../../components/CommentBox';
+import CommentApp from '../../components/CommentApp';
 import CommentList from '../../components/CommentList';
 import CommentForm from '../../components/CommentForm';
 import Filter from '../../components/Filter';
@@ -20,20 +20,20 @@ const defaultProps = {
   filteredByAuthor: ""
 }
 
-describe('CommentBox', () => {
+describe('CommentApp', () => {
   var buildCommentBox = ((props={}) => {
     let renderer = TestUtils.createRenderer();
     const allProps = Object.assign({}, defaultProps, props)
 
-    renderer.render(React.createElement(CommentBox, allProps));
+    renderer.render(React.createElement(CommentApp, allProps));
     let renderedTree = renderer.getRenderOutput();
 
     return renderedTree;
   });
 
   it('creates Comments heading', () => {
-    let commentBox = buildCommentBox()
-    let commentHeading = commentBox.props.children[0];
+    let app = buildCommentBox()
+    let commentHeading = app.props.children[0];
 
     expect(commentHeading.type).to.eq('h1');
     expect(commentHeading.props.children).to.eq('Comments');
@@ -41,8 +41,8 @@ describe('CommentBox', () => {
 
   it('creates CommentList', () => {
     let comments = [{"id": 1, "author": "wat", "text": "wut"}];
-    let commentBox = buildCommentBox({comments});
-    let commentList = commentBox.props.children[1];
+    let app = buildCommentBox({comments});
+    let commentList = app.props.children[1];
 
     expect(commentList.type).to.eq(CommentList);
     expect(commentList.props).to.eql({"comments": comments});
@@ -55,8 +55,8 @@ describe('CommentBox', () => {
     let author = "gagarin";
     let text = "hyperboloid"
 
-    let commentBox = buildCommentBox({handleSubmit, handleTextChange, handleAuthorChange, author, text});
-    let commentForm = commentBox.props.children[2];
+    let app = buildCommentBox({handleSubmit, handleTextChange, handleAuthorChange, author, text});
+    let commentForm = app.props.children[2];
 
     expect(commentForm.type).to.eq(CommentForm);
     expect(commentForm.props).to.eql({handleSubmit, handleTextChange, handleAuthorChange, author, text});
@@ -67,8 +67,8 @@ describe('CommentBox', () => {
     let filteredByAuthor = "";
     let handleAuthorFilterChange = sinon.stub();
 
-    let commentBox = buildCommentBox({allAuthors, filteredByAuthor, handleAuthorFilterChange});
-    let filter = commentBox.props.children[3];
+    let app = buildCommentBox({allAuthors, filteredByAuthor, handleAuthorFilterChange});
+    let filter = app.props.children[3];
 
     expect(filter.type).to.eq(Filter);
     expect(filter.props).to.eql({
