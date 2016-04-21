@@ -32,7 +32,8 @@ export const websocketConnectionRequested = () => {
       } catch (error) {
         console.log("error parsing websocket message", message.data)
       }
-      dispatch(receivedRemoteComments(parsedMessage))
+      const action = receivedRemoteComments(parsedMessage)
+      dispatch(action)
     }
   };
 }
