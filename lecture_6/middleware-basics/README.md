@@ -16,8 +16,9 @@ and where the middleware execution takes place.
 Check main.js for how the middleware is set up.
 
 Type into the author input and check the JavaScript console.
+You can also expand the middleware log statements to see the call stack.
 
-You can see that 
+From the logs, you can see the order of execution:
 
 * we use the action creator to create an action
 * we dispatch the action
