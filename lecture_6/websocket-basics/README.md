@@ -17,15 +17,18 @@ For this we will create server.js,
 which will both start the webpack dev server and a websocket server on a different port.
 
 Install websocket server: 
+```
 npm install --save websocket
+```
 
-We also need to remove `devServer` param from webpack config,
-replace it with an entry for the webpack-dev-server reload client (which also uses websockets by the way!),
+We also need to remove `devServer` param from webpack config,  
+replace it with an entry for the webpack-dev-server reload client (which also uses websockets by the way!),  
 and manually specify the path for output.
 
-Now we can run the websocket dev server programmatically in server.js.
+Now we can run the websocket dev server programmatically in `server.js`.
 
-We also changed package.json `start` command to be `node server.js`, to keep the interface to our program the same.
+We also changed package.json `start` command to be `node server.js`, to keep the interface to our program the same,  
+and the startup as simple and standard.
 
 
 ### Websocket client
@@ -33,8 +36,8 @@ We also changed package.json `start` command to be `node server.js`, to keep the
 Browsers natively support websocket protocol through the `WebSocket` object.
 
 We have learned to use asynchronous action creators so connecting to websocket and receiving messages is a matter of creating necessary asynchronous action creators.
-They are gathered to actions/Websocket.js
+They are gathered to `actions/Websocket.js`
 
-A simple reducer to handle the connection state is created in reducers/Websocket.js
+A simple reducer to handle the connection state is created in `reducers/Websocket.js`
 
-In this example it is not yet clear how to handle incoming websocket messages.
+In this example incoming websocket messages are not handled.
