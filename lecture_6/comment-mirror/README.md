@@ -20,7 +20,7 @@ when only the "remote comments" part of the state changes, an update should not 
 
 We will create the simplest implementation as a proof of concept.
 We will broadcast any message that a browser sends to all others.
-This is done in `server.js`
+This is done in `server/HandleIncomingWebSockets.js`
 
 ### Websocket client
 
