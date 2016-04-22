@@ -41,3 +41,15 @@ They are gathered to `actions/Websocket.js`
 A simple reducer to handle the connection state is created in `reducers/Websocket.js`
 
 In this example incoming websocket messages are not handled.
+
+### Testing
+(mock-socket)[https://github.com/thoov/mock-socket] can be used.
+
+```
+npm install --save-dev mock-socket
+```
+
+We can replace the global WebSocket object in the test.
+We can use the mock server to interact with the WebSocket connection.
+We can listen for messages on the server object, send responses and even close the server.
+We will test at the redux-integration level.

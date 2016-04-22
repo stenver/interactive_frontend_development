@@ -21,6 +21,7 @@
     "jsdom": "^8.2.0",
     "karma-webpack": "^1.7.0",
     "mocha": "^2.4.5",
+    "mock-socket": "^2.0.0",
     "react-addons-test-utils": "^0.14.8",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0",
