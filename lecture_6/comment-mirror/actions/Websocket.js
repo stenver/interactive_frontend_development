@@ -17,10 +17,6 @@ export const websocketConnectionRequested = () => {
       dispatch(websocketConnectionEstablished())
     }
 
-    websocketConnection.onerror = () => {
-      dispatch(websocketConnectionUnavailable())
-    }
-
     websocketConnection.onclose = () => {
       dispatch(websocketConnectionDropped())
     }
@@ -29,11 +25,11 @@ export const websocketConnectionRequested = () => {
       let parsedMessage;
       try {
         parsedMessage = JSON.parse(message.data)
+        const action = receivedRemoteComments(parsedMessage)
+        dispatch(action)
       } catch (error) {
         console.log("error parsing websocket message", message.data)
       }
-      const action = receivedRemoteComments(parsedMessage)
-      dispatch(action)
     }
   };
 }
@@ -62,14 +58,6 @@ const websocketConnectionDropped = () => {
   console.log("disconnected from websocket")
   return {
     type: "WEBSOCKET_CONNECTION_DROPPED",
-    payload: {}
-  }
-}
-
-const websocketConnectionUnavailable = () => {
-  console.log("unable to connect to websocket")
-  return {
-    type: "WEBSOCKET_CONNECTION_UNAVAILABLE",
     payload: {}
   }
 }

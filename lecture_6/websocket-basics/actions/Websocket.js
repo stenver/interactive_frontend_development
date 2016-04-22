@@ -15,10 +15,6 @@ export const websocketConnectionRequested = () => {
       dispatch(websocketConnectionEstablished())
     }
 
-    websocketConnection.onerror = () => {
-      dispatch(websocketConnectionUnavailable())
-    }
-
     websocketConnection.onclose = () => {
       dispatch(websocketConnectionDropped())
     }
@@ -59,14 +55,6 @@ const websocketConnectionDropped = () => {
   console.log("disconnected from websocket")
   return {
     type: "WEBSOCKET_CONNECTION_DROPPED",
-    payload: {}
-  }
-}
-
-const websocketConnectionUnavailable = () => {
-  console.log("unable to connect to websocket")
-  return {
-    type: "WEBSOCKET_CONNECTION_UNAVAILABLE",
     payload: {}
   }
 }
