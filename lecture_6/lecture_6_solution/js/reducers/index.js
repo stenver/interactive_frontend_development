@@ -3,11 +3,13 @@ import { currentGame } from './CurrentGame';
 import { pastGames } from './PastGames';
 import R from 'ramda'
 import { remote } from './Remote';
+import websocket from './Websocket'
 
 export default combineReducers({
   currentGame,
   pastGames
   remote,
+  websocket,
 })
 
 export const calculateAccuracy = (game) => {
