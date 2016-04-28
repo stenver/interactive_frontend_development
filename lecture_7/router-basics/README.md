@@ -28,12 +28,12 @@ Let's extract the previous parts of `CommentApp.js` into `CommentListWithFilter`
 In `Routes.js`, the `Router` component modifies browser history using the browser history API.
 
 Then we create Route components that represent components that will be displayed for a certain url.  
-We will use "/" router for the main view.  
+We will use the root route `"/"` for the main view.  
 If we nest Routes then only the children that's path matches the url will be shown.  
 The Routes can be composed and nested infinitely as anything in React.
 
 As not all the components are immediately visible, we'll create `Link` elements in `AppWrapper` to create links which navigate to other parts of our system.  
-We can use wildcard parameters in Routes, the values of which will be passed as props.params to our components.
+We can use parameters in Routes, the values of which will be passed as `props.params` to our components.
 
 We can also navigate in redux action creators by using `browserHistory` directly.  
 Remember that this cannot be done in reducers or the pure components.  
