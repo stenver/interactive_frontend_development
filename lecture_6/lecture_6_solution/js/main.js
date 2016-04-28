@@ -5,10 +5,15 @@ import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk';
 import speedTyperReducer from './reducers';
 import Game from "./components/Game";
+import websocketPublisher from './middlewares/WebsocketPublisher'
+import { sendWebsocketMessage, websocketConnectionRequested } from './actions/Websocket'
 
 const store = createStore(
   speedTyperReducer,
-  applyMiddleware(thunk)
+  applyMiddleware(
+    thunk,
+    websocketPublisher(sendWebsocketMessage)
+  )
 );
 
 ReactDOM.render(
@@ -17,3 +22,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('content')
 );
+
+store.dispatch(websocketConnectionRequested())

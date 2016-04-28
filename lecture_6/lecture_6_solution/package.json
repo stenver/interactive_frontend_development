@@ -12,7 +12,8 @@
     "react-redux": "^4.4.2",
     "redux": "^3.4.0",
     "redux-thunk": "^2.0.1",
-    "webpack": "^1.12.14"
+    "webpack": "^1.12.14",
+    "websocket": "^1.0.22"
   },
   "devDependencies": {
     "babel-core": "^6.7.2",

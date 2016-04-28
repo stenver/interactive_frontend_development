@@ -7,7 +7,7 @@ import websocket from './Websocket'
 
 export default combineReducers({
   currentGame,
-  pastGames
+  pastGames,
   remote,
   websocket,
 })
