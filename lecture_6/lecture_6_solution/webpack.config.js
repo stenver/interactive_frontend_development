@@ -1,10 +1,16 @@
+var path = require('path');
+
+var port = process.env.port || 3000;
+var host = 'localhost';
+
 module.exports = {
-  entry: './js/main.js',
+  entry: [
+    `webpack-dev-server/client?http://${host}:${port}`,
+    './js/main.js',
+  ],
   output: {
-    filename: 'bundle.js'
-  },
-  devServer: {
-    port: 3000
+    filename: 'bundle.js',
+    path: path.join(__dirname, '/'),
   },
   module: {
     loaders: [

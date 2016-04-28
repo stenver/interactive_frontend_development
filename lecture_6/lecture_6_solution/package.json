@@ -36,7 +36,7 @@
     "test": "mocha",
     "test-debug": "mocha --debug-brk",
     "test-debug-bugger": "./node_modules/bugger/bin/bugger.js  --brk ./node_modules/mocha/bin/_mocha",
-    "start": "webpack-dev-server"
+    "start": "node server.js"
   },
   "keywords": [
     "react",
