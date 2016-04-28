@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { currentGame } from './currentGame';
-import { pastGames } from './pastGames';
+import { currentGame } from './CurrentGame';
+import { pastGames } from './PastGames';
 
 export default combineReducers({
   currentGame,

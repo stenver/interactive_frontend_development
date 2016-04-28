@@ -1,4 +1,4 @@
-import { currentGame }from '../../js/reducers/currentGame'
+import { currentGame }from '../../js/reducers/CurrentGame'
 
 describe('currentGame', () => {
   context("START_WORD_FETCH", () => {

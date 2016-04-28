@@ -1,4 +1,4 @@
-import { pastGames }from '../../js/reducers/pastGames'
+import { pastGames }from '../../js/reducers/PastGames'
 
 describe('pastGames', () => {
   context("END_GAME", () => {
