@@ -2,10 +2,12 @@ import { combineReducers } from 'redux';
 import { currentGame } from './CurrentGame';
 import { pastGames } from './PastGames';
 import R from 'ramda'
+import { remote } from './Remote';
 
 export default combineReducers({
   currentGame,
   pastGames
+  remote,
 })
 
 export const calculateAccuracy = (game) => {
