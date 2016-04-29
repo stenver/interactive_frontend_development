@@ -20,9 +20,9 @@ export const calculateWordsPerMinute = (state, endTime) => {
   return (state.pastInput.length / minutesPassed).toFixed(2);
 };
 
-export const calculateTimeElapsed = (state, endTime) => {
-  if (state.startTime !== undefined) {
-    return (endTime - state.startTime).toFixed(0);
+export const calculateTimeElapsed = (startTime, endTime) => {
+  if (startTime !== undefined) {
+    return (endTime - startTime).toFixed(0);
   }else{
     return "N/A"
   }

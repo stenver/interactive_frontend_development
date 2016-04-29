@@ -53,8 +53,8 @@ describe('stats selectors', () => {
       let now = Math.floor(Date.now() / 1000);
       let one_sec_later = Math.floor(Date.now() / 1000) + 1;
       let one_min_later = Math.floor(Date.now() / 1000) + 60;
-      expect(calculateTimeElapsed({startTime: now}, one_sec_later)).to.eq('1')
-      expect(calculateTimeElapsed({startTime: now}, one_min_later)).to.eq('60')
+      expect(calculateTimeElapsed(now, one_sec_later)).to.eq('1')
+      expect(calculateTimeElapsed(now, one_min_later)).to.eq('60')
     })
   });
 

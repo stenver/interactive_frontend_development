@@ -1,44 +1,21 @@
 import React from "react";
 import Stats from "../components/Stats";
 import { connect } from 'react-redux'
-import {
-  calculateAccuracy,
-  calculateWordsPerMinute,
-  calculateTimeElapsed,
-  getCurrentTime
-} from '../reducers';
+import { calculateAccuracy, calculateWordsPerMinute, calculateTimeElapsed } from '../reducers';
+import TickingContainer from './TickingContainer'
 
-export const StatsContainer = React.createClass({
-  updateCounter: function() {
-    this.forceUpdate()
-  },
-
-  componentDidMount: function(){
-    this.interval = setInterval(this.updateCounter, 1000);
-  },
-
-  componentWillUnmount: function() {
-    clearInterval(this.interval);
-  },
-
-  render: function() {
-    const timeElapsed = calculateTimeElapsed(this.props, getCurrentTime());
-    return (
-      <Stats
-        accuracy={this.props.accuracy}
-        wordsPerMinute={this.props.wordsPerMinute}
-        timeElapsed={timeElapsed}
-      />
-    );
-  }
-});
-
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     accuracy: calculateAccuracy(state.currentGame),
-    wordsPerMinute: calculateWordsPerMinute(state.currentGame, getCurrentTime()),
-    startTime: state.currentGame.startTime
+    wordsPerMinute: calculateWordsPerMinute(state.currentGame, ownProps.currentTime),
+    timeElapsed: calculateTimeElapsed(state.currentGame.startTime, ownProps.currentTime)
   }
 };
 
-export default connect(mapStateToProps)(StatsContainer);
+const StatsContainer = connect(mapStateToProps)(Stats);
+
+const TickingStatsContainer = (_) => {
+  return React.createElement(TickingContainer, {component: StatsContainer})
+}
+
+export default TickingStatsContainer;

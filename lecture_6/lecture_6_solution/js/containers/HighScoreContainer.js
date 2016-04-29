@@ -12,7 +12,7 @@ export const HighScoreContainer = React.createClass({
     return this.props.pastGames.map((game, index) => {
       const accuracy = calculateAccuracy(game);
       const wordsPerMinute = calculateWordsPerMinute(game, game.endTime);
-      const timeElapsed = calculateTimeElapsed(game, game.endTime);
+      const timeElapsed = calculateTimeElapsed(game.startTime, game.endTime);
       return <Stats
               key={index}
               accuracy={accuracy}
