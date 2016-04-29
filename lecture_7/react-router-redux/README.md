@@ -28,6 +28,6 @@ We'll use the `routerMiddleware` so we can dispatch actions instead of using Rea
 Let's remove using the `browserHistory` from the `addComment` action to keep it simple. And instead dispatch `push("/comments")` from the `CommentForm` container.
 
 ## Additional resources
-[React Router Redux](https://github.com/reactjs/react-router-redux)
-[React Router](https://github.com/reactjs/react-router)
+[React Router Redux](https://github.com/reactjs/react-router-redux)  
+[React Router](https://github.com/reactjs/react-router)  
 [Redux DevTools](https://github.com/zalmoxisus/redux-devtools-extension)
