@@ -3,7 +3,8 @@ import {
   calculateWordsPerMinute,
   calculateTimeElapsed,
   getCurrentTime,
-  isStarted
+  isStarted,
+  calculateHighestWordsPerMinute
 } from '../../js/reducers'
 
 describe('stats selectors', () => {
@@ -38,6 +39,21 @@ describe('stats selectors', () => {
       expect(calculateWordsPerMinute({ pastInput: ["b", "b", "c"], startTime: one_sec_ago }, now)).to.eq('180.00')
     })
   });
+
+  describe('calculateHighestWordsPerMinute', () => {
+
+    it('calculate highest words per minute across games', () => {
+      let now = Math.floor(Date.now() / 1000);
+      let oneMinuteAgo = now - 60;
+
+      const games = [
+        { pastInput: ["a"], startTime:  oneMinuteAgo, endTime: now},
+        { pastInput: ["a", "b"], startTime:  oneMinuteAgo, endTime: now}
+      ]
+
+      expect(calculateHighestWordsPerMinute(games)).to.eq('2.00')
+    })
+  })
 
   describe('calculateTimeElapsed', () => {
     var clock = null;
