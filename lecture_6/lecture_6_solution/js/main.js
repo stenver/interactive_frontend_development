@@ -7,12 +7,14 @@ import speedTyperReducer from './reducers';
 import Game from "./components/Game";
 import websocketPublisher from './middlewares/WebsocketPublisher'
 import { sendWebsocketMessage, websocketConnectionRequested } from './actions/Websocket'
+import actionsPerMinuteLogger from './middlewares/ActionsPerMinuteLogger'
 
 const store = createStore(
   speedTyperReducer,
   applyMiddleware(
     thunk,
-    websocketPublisher(sendWebsocketMessage)
+    websocketPublisher(sendWebsocketMessage),
+    actionsPerMinuteLogger(console)
   )
 );
 
