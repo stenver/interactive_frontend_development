@@ -1,0 +1,6 @@
+--require test/test_helper
+--compilers js:babel-core/register
+--recursive
+--reporter spec
+--ui bdd
+
